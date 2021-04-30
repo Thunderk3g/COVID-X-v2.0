@@ -6,7 +6,6 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ShowApiComponent } from './show-api/show-api.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -16,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     HomeComponent,
     DashboardComponent,
-    ShowApiComponent
+
   ],
   imports: [
     BrowserModule,
