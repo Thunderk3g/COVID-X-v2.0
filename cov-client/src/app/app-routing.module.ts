@@ -3,9 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { ShowApiComponent } from './show-api/show-api.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: ShowApiComponent },
+  { path: 'home-component', component: HomeComponent },
   { path: 'dashboard-component', component: DashboardComponent },
   { path: 'header-component', component: HeaderComponent },
   { path: 'footer-component', component: FooterComponent },

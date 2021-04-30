@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {HttpClient} from '@angular/common/http';
 @Component({
   selector: 'app-show-api',
   templateUrl: './show-api.component.html',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowApiComponent implements OnInit {
 
-  constructor() { }
+  li:any;
+  constructor(private http : HttpClient){
+    this.li={};
+}
 
   ngOnInit(): void {
-  }
-
+    this.http.get('https://corona.askbhunte.com/api/v1/data/nepal')
+    .subscribe((response) => {
+      console.log(response)
+      this.li=response;
+    })
+}
 }
