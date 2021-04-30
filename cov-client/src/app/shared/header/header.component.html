@@ -1,1 +1,23 @@
-<p>header works!</p>
+<div class="header">
+    <div class="logo">
+        <p>Covid <span>Tracker</span></p>
+    </div>
+    <div id="flip"><p>Menu</p></div>
+    <nav id="nav">
+        <ul>
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Plans</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script>
+    $(document).ready(function () {
+  $("#flip").click(function () {
+    $("#nav").slideToggle(1500);
+  });
+});
+</script>
