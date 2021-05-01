@@ -7,9 +7,8 @@ import { WindowService } from '../common/window/window.service';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
-  ],
-  providers: [
+    CommonModule,
+    WindowService
   ]
 })
-export class HomeModule { }
+export class ContributeNowModule { }
