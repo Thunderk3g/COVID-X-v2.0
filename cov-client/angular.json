@@ -28,11 +28,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/semantic-ui-css/semantic.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "src/assets/js/main.js"
+              "src/assets/js/main.js",
+              "node_modules/semantic-ui-css/semantic.min.js"
             ]
         },
           "configurations": {
