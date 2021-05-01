@@ -1,5 +1,10 @@
 <app-header></app-header>
-<h1>Negetive Cases :{{li.tested_negative}}</h1>
-<h1>Positive Cases :{{li.tested_positive}}</h1>
+<ng-template>
+    <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input name="phoneNumber" type="text" class="form-control">
+      </div>
+    </ng-template>
+    <h1>Negetive Cases :{{li.tested_negative}}</h1>
+    <h1>Positive Cases :{{li.tested_positive}}</h1>
 <app-footer></app-footer>
-
