@@ -61,6 +61,7 @@ export class ContributeNowComponent implements OnInit,AfterViewInit{
       .then(confirmationResult => {
         console.log(confirmationResult);
         this.windowRef.confirmationResult = confirmationResult;
+        this.sentcode = true;
       })
       .catch(error => console.log(error));
 
