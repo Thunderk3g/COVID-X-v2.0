@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WindowService } from '../common/window/window.service';
+import { FormsModule } from '@angular/forms';
+
+
 
 
 
@@ -8,7 +11,8 @@ import { WindowService } from '../common/window/window.service';
   declarations: [],
   imports: [
     CommonModule,
-    WindowService
+    WindowService,
+    FormsModule
   ]
 })
 export class ContributeNowModule { }
