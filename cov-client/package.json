@@ -19,11 +19,8 @@
     "@angular/platform-browser": "~10.1.6",
     "@angular/platform-browser-dynamic": "~10.1.6",
     "@angular/router": "~10.1.6",
-<<<<<<< HEAD
-    "jquery": "^3.6.0",
-=======
     "firebase": "^8.4.3",
->>>>>>> 3d4555eb241514791cde82b80af7de8045142b9a
+    "jquery": "^3.6.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
