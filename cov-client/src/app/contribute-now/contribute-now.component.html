@@ -1,6 +1,13 @@
 <ng-template>
   <div class="form-group">
       <label for="phoneNumber">Phone Number</label>
-      <input name="phoneNumber" type="text" class="form-control">
+      <input name="phoneNumber" type="text" [(ngModel)]="phoneNumber" class="form-control">
     </div>
+    <div id="recaptcha-container"></div>
+    <button class="btn btn-primary btn-block">Send OTP</button>
+    <hr>
+    <div class="form-group">
+    <label for="otp">OTP</label>
+    <input name="otp" type="text" [(ngModel)]="otp" class="form-control">
+  </div>
   </ng-template>

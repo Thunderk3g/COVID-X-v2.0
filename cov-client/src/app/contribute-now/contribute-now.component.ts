@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contribute-now.component.scss']
 })
 export class ContributeNowComponent implements OnInit {
-
+  phoneNumber:string;
+  otp:string;
   constructor() { }
 
   ngOnInit(): void {
