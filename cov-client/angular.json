@@ -34,8 +34,7 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "src/assets/js/main.js",
-              "node_modules/semantic-ui-css/semantic.min.js"
-              "./node_modules/jquery/dist/jquery.js",
+              "node_modules/semantic-ui-css/semantic.min.js",
               "src/assets/js/main.js"
             ]
         },
