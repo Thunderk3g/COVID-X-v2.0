@@ -1,21 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { ContributeNowComponent } from './contribute-now/contribute-now.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContributeNowModule } from './contribute-now/contribute-now.module';
-import { FormsModule } from '@angular/forms';
-
+import { WindowService } from './common/window/window.service';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     HomeComponent,
+    ContributeNowComponent,
     DashboardComponent,
 
   ],
@@ -26,7 +28,7 @@ import { FormsModule } from '@angular/forms';
     ContributeNowModule,
     FormsModule
   ],
-  providers: [],
+  providers: [WindowService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
