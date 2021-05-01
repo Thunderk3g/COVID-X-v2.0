@@ -1,4 +1,63 @@
 <app-header></app-header>
-    <h1>Negetive Cases :{{li.tested_negative}}</h1>
-    <h1>Positive Cases :{{li.tested_positive}}</h1>
+
+<div class="pusher">
+  <div class="main-content">
+    <div class="ui grid stackable padded">
+      <div class="ten wide computer ten wide tablet ten wide mobile column">
+        <div class="content">
+          <h2 class="ui header d-blue">
+            <i class="chart bar outline icon"></i>
+            <div class="content ">
+              Status
+            </div>
+            <div class="sub header text-muted">Positive/Negative cases in Nepal</div>
+            <br>
+          </h2>
+        </div>
+      </div>
+      <div class="eight wide computer eight wide tablet sixteen wide mobile column">
+        <div class="ui fluid card">
+          <div class="content">
+            <div class="ui right floated header red">
+              <i class="icon positive"></i>
+            </div>
+            <div class="header">
+              <div class="ui red header">
+                Positive Cases: {{li.tested_positive}}
+              </div>
+            </div>
+            <div class="meta">
+              In Nepal
+            </div>
+          </div>
+          <div class="extra content">
+            <div class="ui two buttons">
+              <div class="ui red button">More Info</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="eight wide computer eight wide tablet sixteen wide mobile column">
+        <div class="ui fluid card">
+          <div class="content">
+            <div class="ui right floated header green">
+              <i class="icon cross"></i>
+            </div>
+            <div class="header">
+              <div class="ui header green">Negative Cases: {{li.tested_negative}}</div>
+            </div>
+            <div class="meta">
+              In Nepal
+            </div>
+          </div>
+          <div class="extra content">
+            <div class="ui two buttons">
+              <div class="ui green button">More Info</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <app-footer></app-footer>
