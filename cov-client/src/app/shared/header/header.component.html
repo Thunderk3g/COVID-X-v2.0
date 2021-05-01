@@ -1,23 +1,65 @@
-<div class="header">
-    <div class="logo">
-        <p>Covid <span>Tracker</span></p>
+<div class="ui top fixed inverted teal icon menu main">
+  <div class="item">
+    <div class="ui avatar image">
+      <img src="../../../assets/image.svg">
     </div>
-    <div id="flip"><p>Menu</p></div>
-    <nav id="nav">
-        <ul>
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Plans</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-</div>
+    <div class="content">
+      <div class="header">
+        Covid Tracker
+      </div>
+    </div>
+  </div>
+  <div class="search item">
+    <div class="ui transparent inverted icon input">
+      <input type="text" placeholder="Type to search...">
+      <i class="search inverted link icon"></i>
+    </div>
+  </div>
 
-<script>
-    $(document).ready(function () {
-  $("#flip").click(function () {
-    $("#nav").slideToggle(1500);
-  });
-});
-</script>
+  <div class="right menu primary">
+    <a class="item">
+      Home
+    </a>
+    <a class="item">
+      Status
+    </a>
+    <a class="ui dropdown item">
+      Services
+      <i class="angle down icon"></i>
+      <div class="inverted menu">
+        <div class="item">
+          Oxygen
+        </div>
+        <div class="item">
+          Vaccine
+        </div>
+      </div>
+    </a>
+    <a class="item">
+      <i class="plus icon"></i>
+    </a>
+    <div class="right menu slide">
+      <div class="remove item">
+        <i class="remove icon"></i>
+      </div>
+      <div class="item">
+        <i class="plus icon"></i> Test1
+      </div>
+      <div class="item">
+        <i class="plus icon"></i> Test2
+      </div>
+      <div class="item">
+        <i class="plus icon"></i> Test3
+      </div>
+      <div class="item">
+        <i class="plus icon"></i> Test4
+      </div>
+      <div class="item">
+        <i class="plus icon"></i> Test5
+      </div>
+    </div>
+    <a class="item" href="#">
+      <i class="dashboard icon"></i>
+    </a>
+  </div>
+</div>
