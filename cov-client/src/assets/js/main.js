@@ -1,7 +1,7 @@
 $(function() {
-  $('.dropdown.item').on('click', function(){
-    $('inverted.menu').addClass('drop');
-  });
+  $('.dropdown.item')
+    .dropdown();
+  
   $('.plus')
     .on('click', function() {
       $('.search.item, .primary > .item:not(:last-of-type)')
