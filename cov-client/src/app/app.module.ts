@@ -7,7 +7,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ContributeNowComponent } from './contribute-now/contribute-now.component';
+import { ContributeNowModule } from './contribute-now/contribute-now.module';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -17,12 +17,13 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     HomeComponent,
     DashboardComponent,
-    ContributeNowComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ContributeNowModule,
     FormsModule
   ],
   providers: [],

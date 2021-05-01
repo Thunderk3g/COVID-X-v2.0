@@ -1,18 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WindowService } from '../common/window/window.service';
+import { BrowserModule } from '@angular/platform-browser';
+// Form Module //
 import { FormsModule } from '@angular/forms';
-
-
-
+// 1. Import the libs you need
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
-  declarations: [],
   imports: [
     CommonModule,
-    WindowService,
+    AngularFireModule,
+    BrowserModule,
+    // Initialize Module
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule, // auth
     FormsModule
-  ]
+
+  ],
+  exports:[
+    AngularFireModule,
+    AngularFireAuthModule, // auth
+  ],
 })
 export class ContributeNowModule { }
+
