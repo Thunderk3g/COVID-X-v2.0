@@ -14,11 +14,14 @@ import { DOCUMENT } from '@angular/common';
   styleUrls: ['./contribute-now.component.scss']
 })
 export class ContributeNowComponent implements OnInit,AfterViewInit{
+  provider = new firebase.auth.GoogleAuthProvider();
   sentcode: boolean = false;
+  googleSignedIn: boolean = false;
   phoneNumber:string;
   user: any;
   otp:string;
   windowRef: any;
+  li:any;
   firebaseConfig = {
     apiKey: 'AIzaSyALuXsjDCnpBd3-QEdR7l5gIYmDoMegsIE',
     authDomain: 'covid-x-90730.firebaseapp.com',
@@ -34,8 +37,33 @@ export class ContributeNowComponent implements OnInit,AfterViewInit{
       private router: Router,
 
   ) {
+
     firebase.initializeApp(this.firebaseConfig);
     this.windowRef = this.windowService.windowRef;
+   }
+
+   googleSignInViaPopup(){
+    firebase.auth()
+    .signInWithPopup(this.provider)
+    .then((result) => {
+      /** @type {firebase.auth.OAuthCredential} */
+      var credential = result.credential;
+      // The signed-in user info.
+      var user = result.user;
+      console.log(user);
+      this.li=user;
+      this.googleSignedIn = true;
+    }).catch((error) => {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+    });
+
    }
    ngOnInit(){
     this.windowRef = this.windowService.windowRef;

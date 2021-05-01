@@ -23,6 +23,12 @@
               <button class="login__btn btn btn btn_blue" (click)="sendOTP()" style="margin-top:10px">
                 Send Verification Code
               </button>
+              <button class="login__btn btn btn btn_blue" (click)="googleSignInViaPopup()" style="margin-top:10px">
+                Sign-In with Google
+              </button>
+            </div>
+            <div class="login__field field" *ngIf="googleSignedIn">
+              <h1>You are Signed In{{li.displayName}}</h1>
             </div>
             <div class="login__field field" *ngIf="sentcode">
               <div class="field__wrap">
@@ -37,6 +43,7 @@
               <button class="login__btn btn btn btn_blue" (click)="verifyOTP()" style="margin-top:10px">
                 Verify
               </button>
+
             </div>
           </div>
         </form>
