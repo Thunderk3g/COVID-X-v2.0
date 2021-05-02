@@ -8,8 +8,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [
-  // { path: '', component: HomeComponent },
   { path: '', component: LandingPageComponent },
+  { path: 'home-component', component: HomeComponent },
   { path: 'contribute-now-component', component: ContributeNowComponent },
   { path: 'dashboard-component', component: DashboardComponent },
   { path: 'header-component', component: HeaderComponent },

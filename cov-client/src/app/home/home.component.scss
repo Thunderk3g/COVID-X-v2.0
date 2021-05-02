@@ -2,3 +2,92 @@
   margin: 2em 0em 0em;
   padding: 2em 0em;
 }
+
+/** Start Stats Card Styling **/
+
+.stats-container .card {
+  min-width: 200px;
+  flex-grow: 0;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.stats-container .card-body {
+  padding: 1rem .5rem .5rem;
+}
+
+.stats-container .card-title {
+  color: #695d5c;
+  font-weight: 700;
+  text-transform: uppercase;
+  ;
+}
+
+.stats-container .card-subtitle {
+  font-weight: 600;
+}
+
+.stats-container .total {
+  font-size: 0.8rem;
+}
+
+.stats-container .tab-selection {
+  height: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.stats-container h3 {
+  font-size: 1.3rem;
+}
+
+.stats-container .card:hover {
+  cursor: pointer;
+  transform: translate3d(0, -5px, 0);
+  box-shadow: 0 2rem 5rem 0 rgba(0, 0, 0, .1);
+  background-color: #f5f8fa;
+}
+
+.card-subtitle {
+  font-family: monospace !important;
+}
+
+.cases:hover .tab-selection,
+.cases.active .tab-selection {
+  background-color: #1d2c4d;
+}
+
+.recovered:hover .tab-selection,
+.recovered.active .tab-selection {
+  background-color: #7fd922;
+}
+
+.deaths:hover .tab-selection,
+.deaths.active .tab-selection {
+  background-color: #cc1034;
+}
+
+.total-number,
+.card.active i,
+.card.active h6 {
+  color: #1d2c4d;
+}
+
+.recovered-number,
+.card.recovered i,
+.card.recovered h6 {
+  color: #7fd922;
+}
+
+.deaths-number,
+.card.deaths i,
+.card.deaths h6 {
+  color: #cc1034;
+}
+
+/** End Stats Card Styling **/
