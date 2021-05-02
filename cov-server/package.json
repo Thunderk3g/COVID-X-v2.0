@@ -1,0 +1,29 @@
+{
+  "name": "cov-server",
+  "version": "1.0.0",
+  "description": "Node.js Restful CRUD API with Node.js , Express and MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thunderk3g/COVID-X-v2.0.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "rest",
+    "api"
+  ],
+  "author": "Thunderk3g and Enryuu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thunderk3g/COVID-X-v2.0/issues"
+  },
+  "homepage": "https://github.com/Thunderk3g/COVID-X-v2.0#readme",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}
