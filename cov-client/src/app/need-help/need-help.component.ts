@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService} from '../common/window/auth.service';
+import { AuthService } from '../common/window/auth.service';
 @Component({
   selector: 'app-need-help',
   templateUrl: './need-help.component.html',
