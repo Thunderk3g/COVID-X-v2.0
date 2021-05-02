@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContributeNowModule } from './contribute-now/contribute-now.module';
 import { WindowService } from './common/window/window.service';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { WindowService } from './common/window/window.service';
     HomeComponent,
     ContributeNowComponent,
     DashboardComponent,
+    LandingPageComponent,
 
   ],
   imports: [

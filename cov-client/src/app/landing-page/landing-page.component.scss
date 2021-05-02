@@ -1,0 +1,150 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #fff;
+  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+// h1:after {
+//   content: "";
+//   position: absolute;
+//   width: 0;
+//   height: 4px;
+//   left: 0;
+//   bottom: -8px;
+//   background: #fff;
+//   transition: 500ms all ease-in-out;
+// }
+
+a.butn {
+  display: block;
+  position: absolute;
+  height: 25%;
+  width: 40%;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  text-decoration: none;
+  transform: translate(70%, 140%);
+  border: 2px solid #fff;
+  border-radius: 7px;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+a.butn:before {
+  content: "";
+  background: #fff;
+  height: 0;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 300ms all ease-in-out;
+}
+
+a.butn:hover:before {
+  height: 4px;
+}
+
+.container {
+  background: linear-gradient(to right, #2e2543, #045c70);
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.container .one-half {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container .one-half.left {
+  left: 0;
+  background-size: cover;
+}
+
+.container .one-half.left:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #08c25517;
+  position: absolute;
+}
+
+.container .one-half.right {
+  right: 0;
+  background-size: cover;
+}
+
+.container .one-half.right:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #c208a317;
+  position: absolute;
+}
+
+.container .one-half.left,
+.container .one-half.right {
+  transition: 500ms all ease-in-out;
+}
+
+.container .one-half.left:before,
+.container .one-half.right:before {
+  transition: 500ms all ease-in-out;
+}
+
+.container.left-is-hovered .left {
+  width: 70%;
+}
+
+.container.left-is-hovered .left h1:after {
+  width: 100%;
+}
+
+.container.left-is-hovered .right {
+  width: 30%;
+}
+
+.container.left-is-hovered .right:before {
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 2;
+}
+
+.container.right-is-hovered .right {
+  width: 70%;
+}
+
+.container.right-is-hovered .right h1:after {
+  width: 100%;
+}
+
+.container.right-is-hovered .left {
+  width: 30%;
+}
+
+.container.right-is-hovered .left:before {
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 2;
+}
