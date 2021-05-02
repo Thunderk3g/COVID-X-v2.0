@@ -3,8 +3,9 @@ var http =require('http');
 const { Mongoose } = require('mongoose');
 var path = require('path');
 var mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 var config = require('./config');
-
+var entryRoute = require('./routes/entry.route');
 //Connect to MongoDB
 mongoose
   .connect(
@@ -24,6 +25,16 @@ mongoose.connection.on('error' , err => {
 });
 var port = 3000;
 var app = express();
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+
+}));
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
+app.use('/entry',entryRoute);
 //Set resource Public 
 app.use(express.static(__dirname + '/view'));
 app.get('/',(req,res)=>{
