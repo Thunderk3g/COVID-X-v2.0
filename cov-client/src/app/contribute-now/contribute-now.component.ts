@@ -6,8 +6,6 @@ import "firebase/firestore";
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { WindowService } from '../common/window/window.service';
 import { Router } from '@angular/router';
-import { DOCUMENT } from '@angular/common';
-
 @Component({
   selector: 'app-contribute-now',
   templateUrl: './contribute-now.component.html',
@@ -15,10 +13,13 @@ import { DOCUMENT } from '@angular/common';
 })
 export class ContributeNowComponent implements OnInit,AfterViewInit{
   provider = new firebase.auth.GoogleAuthProvider();
+  fbprovider = new firebase.auth.FacebookAuthProvider();
   sentcode: boolean = false;
   googleSignedIn: boolean = false;
+  facebookSignedIn: boolean = false;
   phoneNumber:string;
   user: any;
+  fbuser:any;
   otp:string;
   windowRef: any;
   li:any;
@@ -63,7 +64,34 @@ export class ContributeNowComponent implements OnInit,AfterViewInit{
       var credential = error.credential;
       // ...
     });
+   }
 
+   facebookSignInViaPopup(){
+    firebase
+    .auth()
+    .signInWithPopup(this.fbprovider)
+    .then((result) => {
+      /** @type {firebase.auth.OAuthCredential} */
+      var credential = result.credential;
+
+      // The signed-in user info.
+      var fbuser = result.user;
+      this.facebookSignedIn = true;
+      console.log(fbuser);
+      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    //   var accessToken = credential.accessToken;
+      // ...
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+          // ...
+    });
    }
    ngOnInit(){
     this.windowRef = this.windowService.windowRef;

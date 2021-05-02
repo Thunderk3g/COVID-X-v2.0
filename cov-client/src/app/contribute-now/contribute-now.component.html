@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <div class="out">
   <div class="login">
     <div class="login__container">
@@ -26,9 +28,15 @@
               <button class="login__btn btn btn btn_blue" (click)="googleSignInViaPopup()" style="margin-top:10px">
                 Sign-In with Google
               </button>
+              <button class="login__btn btn btn btn_blue" (click)="facebookSignInViaPopup()" style="margin-top:10px">
+                Sign-In with Facebook
+              </button>
             </div>
             <div class="login__field field" *ngIf="googleSignedIn">
               <h1>You are Signed In{{li.displayName}}</h1>
+            </div>
+            <div class="login__field field" *ngIf="facebookSignedIn">
+              <h1>You are Signed In</h1>
             </div>
             <div class="login__field field" *ngIf="sentcode">
               <div class="field__wrap">
@@ -57,3 +65,4 @@
     </div>
   </div>
 </div>
+<app-footer></app-footer>
