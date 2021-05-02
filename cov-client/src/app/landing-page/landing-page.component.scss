@@ -41,7 +41,7 @@ h1:after {
 .raise:hover,
 .raise:focus {
   box-shadow: 0 0.5em 0.5em -0.4em $secondary-color;
-  transform: translate(75%, 130%);
+  transform: translate(50%, 135%);
   background-color: #00000073;
 }
 
@@ -61,15 +61,15 @@ button {
   display: block;
   position: absolute;
   height: 25%;
-  width: 40%;
+  width: 50%;
   text-align: center;
   line-height: 40px;
   color: #fff;
   text-decoration: none;
-  transform: translate(75%, 140%);
+  transform: translate(50%, 145%);
   border: 2px solid #fff;
   border-radius: 7px;
-  font-size: 3.5vmin;
+  font-size: 3vmin;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -124,7 +124,7 @@ a.butn:hover:before {
 }
 
 .container {
-  background: linear-gradient(to right, $primary-color, $secondary-color);
+  background: linear-gradient(to right, #1c437e, #1d3881);
   width: 100%;
   height: 100%;
   position: relative;
@@ -209,6 +209,10 @@ a.butn:hover:before {
 
 
 @media screen and (max-width: 1355px) {
+  h1 {
+    font-size: 5vmin;
+  }
+
   button {
     min-width: 30%;
     width: 70%;
@@ -221,4 +225,15 @@ a.butn:hover:before {
     transform: translate(20%, 130%);
     background-color: #00000073;
   }
+}
+
+@media screen and (max-width: 1355px) {
+  h1 {
+    font-size: 4vmin;
+  }
+
+  button {
+    font-size: 2vmin;
+  }
+
 }
