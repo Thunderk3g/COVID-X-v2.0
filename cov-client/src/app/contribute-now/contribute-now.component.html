@@ -1,57 +1,48 @@
 <app-header></app-header>
 
-<div class="out">
-  <div class="login">
-    <div class="login__container">
-      <div class="login__wrap">
-        <div class="login__head">
-          <a class="login__logo" href="#"
-            ></a>
-        </div>
-        <form class="login__form">
-          <div class="login__body">
-            <div class="login__title login__title_sm">Login to your account</div>
-            <div class="login__field field" *ngIf="!sentcode">
-              <div class="field__wrap">
-                <input
-                  class="field__input"
-                  type="text"
-                  name="phone"
-                  placeholder="Your 10 digit mobile number"
-                  [(ngModel)]="phoneNumber"
-                />
-              </div>
-              <div class="recaptcha-container" style="margin-top:10px" id="recaptcha-container"></div>
-              <button class="login__btn btn btn btn_blue" (click)="sendOTP()" style="margin-top:10px">
-                Send Verification Code
-              </button>
-              <button class="login__btn btn btn btn_blue" (click)="googleSignInViaPopup()" style="margin-top:10px">
-                Sign-In with Google
-              </button>
-              <button class="login__btn btn btn btn_blue" (click)="facebookSignInViaPopup()" style="margin-top:10px">
-                Sign-In with Facebook
-              </button>
-            </div>
-            <div class="login__field field" *ngIf="googleSignedIn">
-              <h1>You are Signed In{{li.displayName}}</h1>
-            </div>
-            <div class="login__field field" *ngIf="facebookSignedIn">
-              <h1>You are Signed In</h1>
-            </div>
-            <div class="login__field field" *ngIf="sentcode">
-              <div class="field__wrap">
-                <input
-                  class="field__input"
-                  type="text"
-                  name="verificatiocode"
-                  placeholder="Enter Verification Code"
-                  [(ngModel)]="otp"
-                />
-              </div>
-              <button class="login__btn btn btn btn_blue" (click)="verifyOTP()" style="margin-top:10px">
-                Verify
-              </button>
+<div class="ui grid sem">
+  <div class="four wide column"></div>
 
+  <div class="eight wide column">
+    <div class="ui info message" style="top: 15px;">
+      <div class="header">
+        Use OTP to verify yourself before proceeding.
+      </div>
+    </div>
+
+    <div class="ui segments" style="top: 20px; margin-bottom: 20px">
+      <div class="ui segment">
+        <h4 class="ui header">OTP form</h4>
+      </div>
+
+      <div class="ui secondary segment">
+        <form id="helpForm" class="ui grid form" style="padding: 10px">
+          <div class="row field">
+            <label class="six wide column" for="ph_no">Log in to your account</label>
+            <div class="eight wide column">
+              <div class="ui input">
+                <input id="ph_no" name="ph_no" type="text" placeholder="Enter your 10 digit mobile number" />
+              </div>
+
+            </div>
+          </div>
+          <div class="row">
+            <label class="six wide column"></label>
+            <div class="eight wide column">
+              <button class="ui primary button" (click)="sendOTP()"> Send Verification code </button>
+            </div>
+          </div>
+          <div class="row">
+            <label class="six wide column"> Or sign in with: </label>
+            <div class="eight wide column">
+              <div class="ui facebook button" (click)="facebookSignInViaPopup()">
+                <i class=" facebook icon"></i>
+                Facebook
+              </div>
+              <div class="ui google plus button">
+                <i class="google plus icon" (click)="googleSignInViaPopup()"></i>
+                Google Plus
+              </div>
             </div>
           </div>
         </form>
@@ -65,4 +56,57 @@
     </div>
   </div>
 </div>
+
+
+<!-- <div class=" out">
+        <div class="login">
+          <div class="login__container">
+            <div class="login__wrap">
+              <div class="login__head">
+                <a class="login__logo" href="#"></a>
+              </div>
+              <form class="login__form">
+                <div class="login__body">
+                  <div class="login__title login__title_sm">Login to your account</div>
+                  <div class="login__field field" *ngIf="!sentcode">
+                    <div class="field__wrap">
+                      <input class="field__input" type="text" name="phone" placeholder="Your 10 digit mobile number"
+                        [(ngModel)]="phoneNumber" />
+                    </div>
+                    <div class="recaptcha-container" style="margin-top:10px" id="recaptcha-container"></div>
+                    <button class="login__btn btn btn btn_blue" (click)="sendOTP()" style="margin-top:10px">
+                      Send Verification Code
+                    </button>
+                    <button class="login__btn btn btn btn_blue" (click)="googleSignInViaPopup()"
+                      style="margin-top:10px">
+                      Sign-In with Google
+                    </button>
+                    <button class="login__btn btn btn btn_blue" (click)="facebookSignInViaPopup()"
+                      style="margin-top:10px">
+                      Sign-In with Facebook
+                    </button>
+                  </div>
+                  <div class="login__field field" *ngIf="googleSignedIn">
+                    <h1>You are Signed In{{li.displayName}}</h1>
+                  </div>
+                  <div class="login__field field" *ngIf="facebookSignedIn">
+                    <h1>You are Signed In</h1>
+                  </div>
+                  <div class="login__field field" *ngIf="sentcode">
+                    <div class="field__wrap">
+                      <input class="field__input" type="text" name="verificatiocode"
+                        placeholder="Enter Verification Code" [(ngModel)]="otp" />
+                    </div>
+                    <button class="login__btn btn btn btn_blue" (click)="verifyOTP()" style="margin-top:10px">
+                      Verify
+                    </button>
+
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div> -->
 <app-footer></app-footer>
