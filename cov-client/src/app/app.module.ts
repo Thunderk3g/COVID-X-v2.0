@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContributeNowModule } from './contribute-now/contribute-now.module';
 import { WindowService } from './common/window/window.service';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { NeedHelpComponent } from './need-help/need-help.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +22,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     ContributeNowComponent,
     DashboardComponent,
     LandingPageComponent,
+    NeedHelpComponent,
 
   ],
   imports: [
