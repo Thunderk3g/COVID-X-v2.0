@@ -1,3 +1,9 @@
+$primary-color: #0b132b;
+$secondary-color: #093a3e;
+$color1: #2ec4b6;
+$color2: #1c2541;
+$color3: #ff9f1c;
+
 html,
 body {
   width: 100%;
@@ -21,16 +27,53 @@ h1 {
   white-space: nowrap;
 }
 
-// h1:after {
-//   content: "";
-//   position: absolute;
-//   width: 0;
-//   height: 4px;
-//   left: 0;
-//   bottom: -8px;
-//   background: #fff;
-//   transition: 500ms all ease-in-out;
-// }
+h1:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 4px;
+  left: 0;
+  bottom: -8px;
+  background: #fff;
+  transition: 500ms all ease-in-out;
+}
+
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em $secondary-color;
+  transform: translate(75git %, 130%);
+  background-color: #00000073;
+}
+
+button {
+  color: #000000;
+  transition: 0.25s;
+
+  &:hover,
+  &:focus {
+    border-color: #222222;
+    color: #fff;
+  }
+}
+
+button {
+  background: none;
+  display: block;
+  position: absolute;
+  height: 25%;
+  width: 40%;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  text-decoration: none;
+  transform: translate(75%, 140%);
+  border: 2px solid #fff;
+  border-radius: 7px;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
 
 a.butn {
   display: block;
@@ -66,7 +109,7 @@ a.butn:hover:before {
 }
 
 .container {
-  background: linear-gradient(to right, #2e2543, #045c70);
+  background: linear-gradient(to right, $primary-color, $secondary-color);
   width: 100%;
   height: 100%;
   position: relative;
@@ -88,7 +131,7 @@ a.butn:hover:before {
   content: "";
   width: 100%;
   height: 100%;
-  background: #08c25517;
+  background: #08c25500;
   position: absolute;
 }
 
@@ -101,7 +144,7 @@ a.butn:hover:before {
   content: "";
   width: 100%;
   height: 100%;
-  background: #c208a317;
+  background: #c208a300;
   position: absolute;
 }
 
