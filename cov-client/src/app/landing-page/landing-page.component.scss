@@ -69,17 +69,32 @@ button {
   transform: translate(75%, 140%);
   border: 2px solid #fff;
   border-radius: 7px;
-  font-size: 2em;
+  font-size: 3.5vmin;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+button:before {
+  content: "";
+  background: #fff;
+  height: 0;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 300ms all ease-in-out;
+}
+
+button:hover:before {
+  height: 4px;
 }
 
 a.butn {
   display: block;
   position: absolute;
   height: 25%;
-  width: 40%;
+  width: 50%;
   text-align: center;
   line-height: 40px;
   color: #fff;
@@ -190,4 +205,20 @@ a.butn:hover:before {
 .container.right-is-hovered .left:before {
   background: rgba(0, 0, 0, 0.65);
   z-index: 2;
+}
+
+
+@media screen and (max-width: 1355px) {
+  button {
+    min-width: 30%;
+    width: 70%;
+    transform: translate(20%, 140%);
+  }
+
+  .raise:hover,
+  .raise:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em $secondary-color;
+    transform: translate(20%, 130%);
+    background-color: #00000073;
+  }
 }
