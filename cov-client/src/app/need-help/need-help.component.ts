@@ -6,7 +6,7 @@ import { AuthService} from '../common/window/auth.service';
   styleUrls: ['./need-help.component.scss']
 })
 export class NeedHelpComponent implements OnInit {
-  auth: AuthService;
+  auth: AuthService
   constructor( auth:AuthService ) { }
 
   ngOnInit(): void {
