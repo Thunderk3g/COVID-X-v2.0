@@ -8,9 +8,9 @@ describe('NeedHelpComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NeedHelpComponent ]
+      declarations: [NeedHelpComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
