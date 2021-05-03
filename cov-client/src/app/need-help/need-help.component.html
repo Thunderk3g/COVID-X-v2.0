@@ -17,7 +17,7 @@
 </div> -->
 <app-header></app-header>
 
-<div class="ui grid sem">
+ <div class="ui grid sem">
   <div class="four wide column"></div>
 
   <div class="eight wide column">
@@ -73,8 +73,7 @@
           <div class="row field">
             <label class="six wide column" for="typeOfReq">Request for</label>
             <div class="eight wide column">
-              <!-- <input id="typeOfReq" name="typeOfReq" type="dropdown" placeholder="Request For" />
-                 -->
+
               <select class="ui dropdown" name="dropdown">
                 <option value="">-- Select --</option>
                 <option value="oxygen">Oxygen</option>
@@ -104,3 +103,15 @@
 
     </div>
   </div>
+
+<ul>
+  <li *ngFor="let data of data" >
+    {{data.firstname}}
+    {{data.lastname}}
+    {{data.address}}
+    {{data.urgency}}
+    {{data.requestfor}}
+    {{data.mobilenumber}}
+    {{data.email}}
+  </li>
+</ul>

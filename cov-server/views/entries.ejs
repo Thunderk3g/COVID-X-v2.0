@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>
+        <%= title %>
+    </title>
+    <style>
+        body {
+            background: url('https://media.sketchfab.com/models/bcfdda7d7bf94925a5b14ba64aefdd9a/thumbnails/c1ab3319fb32488199b26056f96de8a9/904c31bb8ec44e8cb42305a2aea13161.jpeg');
+            background-color: rgba(200, 100, 0, .5);
+        }
+        table{
+            width:100%;
+            background: rgb(116, 33, 116);
+            padding: 15px;
+            border: 2px solid black;
+            border-style:dashed;
+            margin: 0 0 20px 0;
+        }
+        th,td{
+            padding: 5px;
+            border: 1px solid rgb(255, 252, 252);
+            border-style: dotted;
+            color: blanchedalmond;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <h1 class="text-center">Welcome to <%= title %>
+        </h1>
+        <form action="/get" method="POST">
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Enter your name">
+            <label>Phone</label>
+            <input type="number" class="form-control" name="phone" placeholder="Enter your phone">
+            <br>
+            <button class="btn btn-primary" style="width:100%" type="submit">Add an entry</button>
+        </form>
+        <br>
+        <table>
+            <tr>
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>address</th>
+                <th>requestfor</th>
+                <th>urgency</th>
+                <th>gender</th>
+                <th>email</th>
+                <th>mobilenumber</th>
+            </tr>
+            <% for(var i=0; i<entries.length; i++) {%>
+                <tr>
+                    <td><%= entries[i].firstname%></td>
+                    <td><%= entries[i].lastname%></td>
+                    <td><%= entries[i].address%></td>
+                    <td><%= entries[i].requestfor%></td>
+                    <td><%= entries[i].urgency%></td>
+                    <td><%= entries[i].gender%></td>
+                    <td><%= entries[i].email%></td>
+                    <td><%= entries[i].mobilenumber%></td>
+                </tr>
+                <% } %>
+        </table>
+        <button class="btn btn-warning" style="width:100%">Show Entries</button>
+        <!-- Optional JavaScript; choose one of the two! -->
+    </div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

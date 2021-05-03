@@ -13,6 +13,7 @@ import { ContributeNowModule } from './contribute-now/contribute-now.module';
 import { WindowService } from './common/window/window.service';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NeedHelpComponent } from './need-help/need-help.component';
+import { AppHttpService } from './common/app-http.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,7 @@ import { NeedHelpComponent } from './need-help/need-help.component';
     ContributeNowModule,
     FormsModule
   ],
-  providers: [WindowService],
+  providers: [WindowService,AppHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
