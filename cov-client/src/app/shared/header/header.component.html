@@ -1,4 +1,4 @@
-<div class="ui top gray icon menu main">
+<div class="ui top icon menu grid main">
   <div class="item bg-black">
     <div class="ui avatar image">
       <img src="../../../assets/image.svg">
@@ -10,13 +10,13 @@
     </div>
   </div>
   <div class="search item">
-    <div class="ui transparent inverted icon input">
+    <div class="ui inverted gray icon input">
       <input type="text" placeholder="Type to search...">
-      <i class="search inverted link icon"></i>
+      <i class="search icon inverted black"></i>
     </div>
   </div>
 
-  <div class="right menu primary">
+  <div class="right menu primary desktop tablet only desktop-nav">
     <a class="item" routerLink="/home-component">
       Home
     </a>
@@ -38,6 +38,9 @@
 
     <a class="item" routerLink="/contribute-now-component">
       Contribute Now
+    </a>
+    <a class="item" href="#">
+      <i class="dashboard icon"></i>
     </a>
 
     <!-- <a class="item">
@@ -63,8 +66,29 @@
         <i class="plus icon"></i> Test5
       </div>
     </div> -->
-    <a class="item" href="#">
-      <i class="dashboard icon"></i>
-    </a>
   </div>
+</div>
+
+<div class="ui ui top grid">
+  <div class="mobile only row">
+    <div class="column">
+      <div class="ui menu">
+        <a id="mobile_item" class="item menu-button"><i class="bars icon"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ui vertical menu v-menu hide">
+  <div class="ui segment">
+    <div class="padded content">
+      <div class="header">
+        <h2> Covid </h2> Tracker
+      </div>
+    </div>
+  </div>
+
+  <a class="item">Home</a>
+  <a class="item">Status</a>
+  <a class="item">Request Help</a>
+  <a class="item" routerLink="/contribute-now-component">Contribute Now</a>
 </div>

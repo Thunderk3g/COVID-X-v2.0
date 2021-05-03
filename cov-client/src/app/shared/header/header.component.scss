@@ -56,6 +56,32 @@
   }
 }
 
+.ui.grid {
+  padding: 0 !important;
+}
+
+.ui.vertical.menu {
+  margin: 0 !important;
+  position: absolute;
+  height: 100%;
+}
+
+.hide {
+  left: -150vw;
+  transition: 0.5s ease-in-out;
+}
+
+.show {
+  left: 0;
+  transition: 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 460px) {
+  .desktop-nav {
+    display: none;
+  }
+}
+
 // bounce for down angle and plus 
 @keyframes bounce {
 
