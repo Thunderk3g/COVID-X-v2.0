@@ -43,6 +43,18 @@
                 <i class="google plus icon" (click)="googleSignInViaPopup()"></i>
                 Google Plus
               </div>
+              <div class="login__field field" *ngIf="googleSignedIn">
+                <h1>You are Signed In{{li.displayName}}</h1>
+              </div>
+              <div class="login__field field" *ngIf="facebookSignedIn">
+                <h1>You are Signed In</h1>
+              </div>
+              <div class="login__field field" *ngIf="sentcode">
+                <div class="field__wrap">
+                  <input class="field__input" type="text" name="verificatiocode" placeholder="Enter Verification Code"
+                    [(ngModel)]="otp" />
+                </div>
+              </div>
             </div>
           </div>
         </form>
