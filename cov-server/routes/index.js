@@ -20,6 +20,20 @@ router.post('/get', async function(req, res, next) {
   });
   res.render('success', { title: 'COVID-X' , entry : entry });
 });
+router.post('/postEntry', async function(req, res, next) {
+  console.log(req.body);
+  const entry = await Entry.create({
+    firstname : req.body.firstname,
+    lastname : req.body.lastname,
+    address : req.body.address,
+    requestfor : req.body.requestfor,
+    urgency : req.body.urgency,
+    gender : req.body.gender,
+    email : req.body.email,
+    mobilenumber : req.body.mobilenumber
+  });
+  res.send(JSON.stringify(entry));
+});
 /* SHOW ENTRIES */
 router.get('/entries', async function(req, res, next) {
   const entries = await Entry.find().sort({createdAt: -1});
