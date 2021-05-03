@@ -19,6 +19,9 @@ $(function() {
 
   $('.dropdown.item')
   .dropdown();
+  
+  $('.menu .item')
+  .tab();
 
   $('.plus')
     .on('click', function() {
