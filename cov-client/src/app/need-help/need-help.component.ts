@@ -19,5 +19,4 @@ export class NeedHelpComponent implements OnInit {
       console.log(data);
     });
   }
-
 }
