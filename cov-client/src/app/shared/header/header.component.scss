@@ -58,12 +58,14 @@
 
 .ui.grid {
   padding: 0 !important;
+  margin: 0;
 }
 
 .ui.vertical.menu {
   margin: 0 !important;
   position: absolute;
   height: 100%;
+  z-index: 5;
 }
 
 .hide {
@@ -76,9 +78,11 @@
   transition: 0.5s ease-in-out;
 }
 
+
+
 @media screen and (max-width: 460px) {
   .desktop-nav {
-    display: none;
+    display: none !important;
   }
 }
 
