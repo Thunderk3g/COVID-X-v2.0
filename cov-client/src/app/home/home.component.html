@@ -1,212 +1,210 @@
 <app-header></app-header>
 
 <div class="pusher">
-  <div class="main-content">
-    <div class="ui two item inverted teal menu">
-      <a class="active item" data-tab="first">
-        Request List
-      </a>
-      <a class="item" data-tab="second">
-        Corona Status
-      </a>
-    </div>
-  </div>
-  <div class="ui bottom attached active tab segment" data-tab="first">
-    <div class="content">
-      <div class="ui blue dividing header">
-        <i class="book icon"></i>
-        <div class="content">
-          List of Request
-          <div class="sub header"></div>
+    <div class="main-content">
+        <div class="ui two item inverted teal menu">
+            <a class="active item" data-tab="first">
+                Request List
+            </a>
+            <a class="item" data-tab="second">
+                Corona Status
+            </a>
         </div>
-      </div>
+    </div>
+    <div class="ui bottom attached active tab segment" data-tab="first">
+        <div class="content">
+            <div class="ui blue dividing header">
+                <i class="book icon"></i>
+                <div class="content">
+                    List of Request
+                    <div class="sub header"></div>
+                </div>
+            </div>
 
-      <div class="ui grid">
-        <div class="four wide column">
-          <div class="ui vertical fluid tabular menu">
-            <a class="item active" data-tab="first/a">
-              Bed
-            </a>
-            <a class="item" data-tab="first/b">
-              Oxygen
-            </a>
-            <a class="item" data-tab="first/c">
-              Transportation
-            </a>
-            <a class="item" data-tab="first/d">
-              Miscellaneous
-            </a>
-          </div>
+            <div class="ui grid">
+                <div class="four wide column">
+                    <div class="ui vertical fluid tabular menu">
+                        <a class="item active" data-tab="first/a">
+                            Bed
+                        </a>
+                        <a class="item" data-tab="first/b">
+                            Oxygen
+                        </a>
+                        <a class="item" data-tab="first/c">
+                            Transportation
+                        </a>
+                        <a class="item" data-tab="first/d">
+                            Miscellaneous
+                        </a>
+                    </div>
+                </div>
+                <div class="twelve wide stretched column">
+                    <div class="ui active tab segment" data-tab="first/a">
+                        <table class="ui striped table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Request for</th>
+                                    <th>Urgency</th>
+                                    <th>Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let data of data">
+                                    <td>{{data.firstname}}
+                                        {{data.lastname}}</td>
+                                    <td>{{data.requestfor}}</td>
+                                    <td>
+                                        {{data.urgency}}</td>
+                                    <td>
+                                        {{data.address}}</td>
+                                </tr>
+                               </tbody>
+                        </table>
+                    </div>
+                    <div class="ui tab segment" data-tab="first/b">
+                        <table class="ui striped table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Request for</th>
+                                    <th>Urgency</th>
+                                    <th>Address</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="ui tab segment" data-tab="first/c">
+                        <table class="ui striped table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Request for</th>
+                                    <th>Urgency</th>
+                                    <th>Address</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="ui tab segment" data-tab="first/d">
+                        <table class="ui striped table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Request for</th>
+                                    <th>Urgency</th>
+                                    <th>Address</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="twelve wide stretched column">
-          <div class="ui active tab segment" data-tab="first/a">
-            <table class="ui striped table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Request for</th>
-                  <th>Urgency</th>
-                  <th>Address</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Ram Hari</td>
-                  <td>Bed</td>
-                  <td>Medium</td>
-                  <td>Kalanki</td>
-                </tr>
-                <tr>
-                  <td>Diwakar Hero</td>
-                  <td>Bed</td>
-                  <td>Urgent</td>
-                  <td>Kalimati</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="ui tab segment" data-tab="first/b">
-            <table class="ui striped table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Request for</th>
-                  <th>Urgency</th>
-                  <th>Address</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </div>
-          <div class="ui tab segment" data-tab="first/c">
-            <table class="ui striped table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Request for</th>
-                  <th>Urgency</th>
-                  <th>Address</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </div>
-          <div class="ui tab segment" data-tab="first/d">
-            <table class="ui striped table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Request for</th>
-                  <th>Urgency</th>
-                  <th>Address</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="ui bottom attached tab segment" data-tab="second">
-    <div class="content">
-      <div class="ui gray dividing header">
-        <i class="info icon"></i>
+    <div class="ui bottom attached tab segment" data-tab="second">
         <div class="content">
-          Current Covid status in Nepal
-          <div class="sub header"></div>
-        </div>
-      </div>
-      <div class="ui grid stackable padded">
-        <div class="four wide computer eight wide tablet sixteen wide mobile column">
-          <div class="ui fluid card">
-            <div class="content">
-              <div class="ui right floated header red">
-                <i class="icon heartbeat"></i>
-              </div>
-              <div class="header">
-                <div class="ui red header">
-                  Positive Cases: <br>{{li.tested_positive}}
+            <div class="ui gray dividing header">
+                <i class="info icon"></i>
+                <div class="content">
+                    Current Covid status in Nepal
+                    <div class="sub header"></div>
                 </div>
-              </div>
-              <div class="description">
-                People with positive test results.
-              </div>
             </div>
-            <div class="extra content">
-              <div class="ui two buttons">
-                <div class="ui red button">More Info</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="four wide computer eight wide tablet sixteen wide mobile column">
-          <div class="ui fluid card">
-            <div class="content">
-              <div class="ui right floated header green">
-                <i class="icon heart"></i>
-              </div>
-              <div class="header">
-                <div class="ui header green">Negative Cases:<br> {{li.tested_negative}}
+            <div class="ui grid stackable padded">
+                <div class="four wide computer eight wide tablet sixteen wide mobile column">
+                    <div class="ui fluid card">
+                        <div class="content">
+                            <div class="ui right floated header red">
+                                <i class="icon heartbeat"></i>
+                            </div>
+                            <div class="header">
+                                <div class="ui red header">
+                                    Positive Cases:
+                                    <br>{{li.tested_positive}}
+                                </div>
+                            </div>
+                            <div class="description">
+                                People with positive test results.
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="ui two buttons">
+                                <div class="ui red button">More Info</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="description">
-                People with negative test results.
-              </div>
+                <div class="four wide computer eight wide tablet sixteen wide mobile column">
+                    <div class="ui fluid card">
+                        <div class="content">
+                            <div class="ui right floated header green">
+                                <i class="icon heart"></i>
+                            </div>
+                            <div class="header">
+                                <div class="ui header green">Negative Cases:<br>
+                                    {{li.tested_negative}}
+                                </div>
+                            </div>
+                            <div class="description">
+                                People with negative test results.
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="ui two buttons">
+                                <div class="ui green button">More Info</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="four wide computer eight wide tablet sixteen wide mobile column">
+                    <div class="ui fluid card">
+                        <div class="content">
+                            <div class="ui right floated header gray">
+                                <i class="icon user times"></i>
+                            </div>
+                            <div class="header">
+                                <div class="ui gray header">Deaths:
+                                    <br>
+                                    {{li.deaths}}</div>
+                            </div>
+                            <div class="description">
+                                Total number of death by corona.
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="ui two buttons">
+                                <div class="ui gray button">More Info</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="four wide computer eight wide tablet sixteen wide mobile column">
+                    <div class="ui fluid card">
+                        <div class="content">
+                            <div class="ui right floated header blue">
+                                <i class="icon archive"></i>
+                            </div>
+                            <div class="header">
+                                <div class="ui blue header">Total tests:
+                                    <br>
+                                    {{li.tested_total}}</div>
+                            </div>
+                            <div class="description">
+                                Total tests conducted.
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="ui two buttons">
+                                <div class="ui blue button">More Info</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="extra content">
-              <div class="ui two buttons">
-                <div class="ui green button">More Info</div>
-              </div>
-            </div>
-          </div>
         </div>
-        <div class="four wide computer eight wide tablet sixteen wide mobile column">
-          <div class="ui fluid card">
-            <div class="content">
-              <div class="ui right floated header gray">
-                <i class="icon user times"></i>
-              </div>
-              <div class="header">
-                <div class="ui gray header">Deaths: <br>
-                  {{li.deaths}}</div>
-              </div>
-              <div class="description">
-                Total number of death by corona.
-              </div>
-            </div>
-            <div class="extra content">
-              <div class="ui two buttons">
-                <div class="ui gray button">More Info</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="four wide computer eight wide tablet sixteen wide mobile column">
-          <div class="ui fluid card">
-            <div class="content">
-              <div class="ui right floated header blue">
-                <i class="icon archive"></i>
-              </div>
-              <div class="header">
-                <div class="ui blue header">Total tests: <br>
-                  {{li.tested_total}}</div>
-              </div>
-              <div class="description">
-                Total tests conducted.
-              </div>
-            </div>
-            <div class="extra content">
-              <div class="ui two buttons">
-                <div class="ui blue button">More Info</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-  <app-footer></app-footer>
+    <app-footer></app-footer>
