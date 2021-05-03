@@ -17,10 +17,10 @@
 </div> -->
 <app-header></app-header>
 
- <div class="ui grid sem">
-  <div class="four wide column"></div>
+<div class="ui grid sem">
+  <div class="three wide computer two wide tablet one wide mobile column"></div>
 
-  <div class="eight wide column">
+  <div class="ten wide computer eleven wide tablet fourteen wide mobile column">
     <div class="ui info message" style="top: 15px;">
       <div class="header">
         Please enter your identity and select the service you want to request.
@@ -104,14 +104,14 @@
     </div>
   </div>
 
-<ul>
-  <li *ngFor="let data of data" >
-    {{data.firstname}}
-    {{data.lastname}}
-    {{data.address}}
-    {{data.urgency}}
-    {{data.requestfor}}
-    {{data.mobilenumber}}
-    {{data.email}}
-  </li>
-</ul>
+  <ul>
+    <li *ngFor="let data of data">
+      {{data.firstname}}
+      {{data.lastname}}
+      {{data.address}}
+      {{data.urgency}}
+      {{data.requestfor}}
+      {{data.mobilenumber}}
+      {{data.email}}
+    </li>
+  </ul>
