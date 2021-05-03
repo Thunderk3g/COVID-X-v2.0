@@ -6,6 +6,7 @@ import "firebase/firestore";
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { WindowService } from '../common/window/window.service';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-contribute-now',
   templateUrl: './contribute-now.component.html',
