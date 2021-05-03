@@ -23,7 +23,7 @@
     <a class="item">
       Status
     </a>
-    <a class="ui dropdown item" onClick="drop()">
+    <!-- <a class="ui dropdown item" onClick="drop()">
       Services
       <i class="angle down icon"></i>
       <div class="inverted menu">
@@ -34,8 +34,10 @@
           Vaccine
         </div>
       </div>
+    </a> -->
+    <a class="item" routerLink="/need-help">
+      Request Help
     </a>
-
     <a class="item" routerLink="/contribute-now-component">
       Contribute Now
     </a>
@@ -87,8 +89,8 @@
     </div>
   </div>
 
-  <a class="item">Home</a>
-  <a class="item">Status</a>
-  <a class="item">Request Help</a>
+  <a class="item" routerLink="/home-component">Home</a>
+  <a class="item" routerLink="/">Status</a>
+  <a class="item" routerLink="/need-help">Request Help</a>
   <a class="item" routerLink="/contribute-now-component">Contribute Now</a>
 </div>
