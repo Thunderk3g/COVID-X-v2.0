@@ -1,51 +1,50 @@
-
 <app-header></app-header>
 <div class="ui grid sem">
-    <div class="four wide column"></div>
+  <div class="three wide computer two wide tablet one wide mobile column"></div>
 
-    <div class="eight wide column">
-        <div class="ui info message" style="top: 15px;">
-            <div class="header">
-                Please enter your identity and select the service you want to request.
+  <div class="ten wide computer eleven wide tablet fourteen wide mobile column">
+    <div class="ui info message" style="top: 15px;">
+      <div class="header">
+        Please enter your identity and select the service you want to request.
+      </div>
+    </div>
+
+    <div class="ui segments" style="top: 20px; margin-bottom: 20px">
+      <div class="ui segment">
+        <h4 class="ui header">Information Form</h4>
+      </div>
+
+      <div class="ui secondary segment">
+        <form id="helpForm" class="ui grid form" style="padding: 10px" (ngSubmit)="sendEntry()">
+          <div class="row field">
+            <label class="six wide column" for="firstname">First name</label>
+            <div class="eight wide column">
+              <div class="ui input">
+                <input id="firstname" name="firstname" type="text" [(ngModel)]="firstname" placeholder="First name" />
+              </div>
             </div>
-        </div>
+          </div>
 
-        <div class="ui segments" style="top: 20px; margin-bottom: 20px">
-            <div class="ui segment">
-                <h4 class="ui header">Information Form</h4>
+          <div class="row field">
+            <label class="six wide column" for="lastname">Last name</label>
+            <div class="eight wide column">
+              <div class="ui input">
+                <input id="lastname" name="lastname" type="text" placeholder="Last name" [(ngModel)]="lastname" />
+              </div>
             </div>
+          </div>
 
-            <div class="ui secondary segment">
-                <form id="helpForm" class="ui grid form" style="padding: 10px" (ngSubmit)="sendEntry()">
-                    <div class="row field">
-                        <label class="six wide column" for="firstname">First name</label>
-                        <div class="eight wide column">
-                            <div class="ui input">
-                                <input id="firstname" name="firstname" type="text" [(ngModel)]="firstname" placeholder="First name"/>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row field">
-                        <label class="six wide column" for="lastname">Last name</label>
-                        <div class="eight wide column">
-                            <div class="ui input">
-                                <input id="lastname" name="lastname" type="text" placeholder="Last name" [(ngModel)]="lastname"/>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row field">
-                        <label class="six wide column" for="address">Address</label>
-                        <div class="eight wide column">
-                            <div class="ui input">
-                                <input id="address" name="address" type="text" placeholder="address" [(ngModel)]="address"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row field">
-                        <label class="six wide column" for="typeOfReq">Urgency</label>
-                        <div class="eight wide column">
+          <div class="row field">
+            <label class="six wide column" for="address">Address</label>
+            <div class="eight wide column">
+              <div class="ui input">
+                <input id="address" name="address" type="text" placeholder="address" [(ngModel)]="address" />
+              </div>
+            </div>
+          </div>
+          <div class="row field">
+            <label class="six wide column" for="typeOfReq">Urgency</label>
+            <div class="eight wide column">
 
                             <select class="ui dropdown" name="urgency"  [(ngModel)]="asdf">
                                 <option value="" selected disabled>-- Select --</option>
@@ -67,18 +66,18 @@
                         </div>
                     </div>
 
-                    <div class="row field">
-                        <label class="six wide column" for="email">Email</label>
-                        <div class="eight wide column">
-                            <div class="ui input">
-                                <input id="email" name="email" type="text" placeholder="Email" [(ngModel)]="email"/>
-                            </div>
-                        </div>
-                    </div>
+          <div class="row field">
+            <label class="six wide column" for="email">Email</label>
+            <div class="eight wide column">
+              <div class="ui input">
+                <input id="email" name="email" type="text" placeholder="Email" [(ngModel)]="email" />
+              </div>
+            </div>
+          </div>
 
-                    <div class="row field">
-                        <label class="six wide column" for="typeOfReq">Request for</label>
-                        <div class="eight wide column">
+          <div class="row field">
+            <label class="six wide column" for="typeOfReq">Request for</label>
+            <div class="eight wide column">
 
                             <select class="ui dropdown" name="requestfor" [(ngModel)]="requestfor">
                                 <option value="" selected disabled>-- Select --</option>
@@ -89,24 +88,24 @@
                         </div>
                     </div>
 
-                    <div class="row field">
-                        <label class="six wide column" for="ph_no">Mobile Number</label>
-                        <div class="eight wide column">
-                            <div class="ui input">
-                                <input id="ph_no" name="ph_no" type="text" placeholder="Your Mobile number" [(ngModel)]="mobilenumber"/>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <label class="six wide column"></label>
-                        <div class="eight wide column">
-                            <button type="submit" class="ui primary button">Post Request</button>
-                        </div>
-                    </div>
-                </form>
+          <div class="row field">
+            <label class="six wide column" for="ph_no">Mobile Number</label>
+            <div class="eight wide column">
+              <div class="ui input">
+                <input id="ph_no" name="ph_no" type="text" placeholder="Your Mobile number"
+                  [(ngModel)]="mobilenumber" />
+              </div>
             </div>
+          </div>
 
-        </div>
+          <div class="row">
+            <label class="six wide column"></label>
+            <div class="eight wide column">
+              <button type="submit" class="ui primary button">Post Request</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
     </div>
-
+  </div>
