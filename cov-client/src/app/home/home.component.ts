@@ -7,14 +7,17 @@ import { AppHttpService } from '../common/app-http.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  district:any;
   li:any;
   list:any;
   data:any;
+  dist:any;
   constructor(private http : HttpClient,
             private httpservice : AppHttpService,
     ){
     this.li={};
+    this.dist={};
+    this.district="";
 }
 
   ngOnInit(): void {
@@ -25,6 +28,10 @@ export class HomeComponent implements OnInit {
     this.http.get('https://corona.askbhunte.com/api/v1/data/nepal')
     .subscribe((response) => {
       this.li=response;
+    })
+    this.http.get('https://data.askbhunte.com/api/v1/districts')
+    .subscribe((response) => {
+      this.dist=response;
     })
 }
 filter(type:string){
@@ -37,5 +44,12 @@ filter(type:string){
   if(this.list.length==0){
     this.list.push({firstname:"N/A" , lastname:"" , requestfor:"N/A" , urgency:"N/A" , address:"N/A"});
   }
+  }
+  loadDatabyDistrict(){
+      this.http.get('https://data.askbhunte.com/api/v1/districts/'+this.district)
+      .subscribe((response) => {
+        this.dist=response;
+        console.log(this.dist);
+      })
   }
 }

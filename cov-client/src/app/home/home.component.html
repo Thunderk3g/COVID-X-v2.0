@@ -27,13 +27,13 @@
             <a class="item active" data-tab="first/a">
               Bed
             </a>
-            <a class="item" data-tab="first/b">
+            <a class="item" data-tab="first/b" (click)="filter('oxygen')">
               Oxygen
             </a>
-            <a class="item" data-tab="first/c">
+            <a class="item" data-tab="first/c" (click)="filter('transportation')">
               Transportation
             </a>
-            <a class="item" data-tab="first/d">
+            <a class="item" data-tab="first/d" (click)="filter('miscellanous')">
               Miscellaneous
             </a>
           </div>
@@ -50,7 +50,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let data of data">
+                <tr *ngFor="let data of list">
                   <td>{{data.firstname}}
                     {{data.lastname}}</td>
                   <td>{{data.requestfor}}</td>
@@ -62,7 +62,7 @@
               </tbody>
             </table>
           </div>
-          <div class="ui tab segment" data-tab="first/b">
+          <div class="ui tab segment" data-tab="first/b" >
             <table class="ui striped table">
               <thead>
                 <tr>
@@ -72,7 +72,17 @@
                   <th>Address</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+                <tr *ngFor="let data of list">
+                  <td>{{data.firstname}}
+                    {{data.lastname}}</td>
+                  <td>{{data.requestfor}}</td>
+                  <td>
+                    {{data.urgency}}</td>
+                  <td>
+                    {{data.address}}</td>
+                </tr>
+              </tbody>
             </table>
           </div>
           <div class="ui tab segment" data-tab="first/c">
@@ -85,7 +95,17 @@
                   <th>Address</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+                <tr *ngFor="let data of list">
+                  <td>{{data.firstname}}
+                    {{data.lastname}}</td>
+                  <td>{{data.requestfor}}</td>
+                  <td>
+                    {{data.urgency}}</td>
+                  <td>
+                    {{data.address}}</td>
+                </tr>
+              </tbody>
             </table>
           </div>
           <div class="ui tab segment" data-tab="first/d">
@@ -98,7 +118,17 @@
                   <th>Address</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+                <tr *ngFor="let data of list">
+                  <td>{{data.firstname}}
+                    {{data.lastname}}</td>
+                  <td>{{data.requestfor}}</td>
+                  <td>
+                    {{data.urgency}}</td>
+                  <td>
+                    {{data.address}}</td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
@@ -106,224 +136,12 @@
     </div>
   </div>
   <div class="ui bottom attached tab segment" data-tab="second">
-    <div class="content">
-      <div class="ui gray dividing header">
-        <i class="info icon"></i>
-        <div class="content">
-          Current Covid status in Nepal
-          <div class="sub header"></div>
-        </div>
-      </div>
-      <div class="ui grid stackable padded">
-        <div class="four wide computer eight wide tablet sixteen wide mobile column">
-          <div class="ui fluid card">
-            <div class="content">
-              <div class="ui right floated header red">
-                <i class="icon heartbeat"></i>
-              </div>
-              <div class="header">
-                <div class="ui red header">
-                  Positive Cases:
-                  <br>{{li.tested_positive}}
-                </div>
-              </div>
-              <div class="description">
-                People with positive test results.
-              </div>
-            </div>
-
-            <div class="ui grid">
-                <div class="four wide column">
-                    <div class="ui vertical fluid tabular menu">
-                        <a class="item active" data-tab="first/a" (click)="filter('bed')">
-                            Bed
-                        </a>
-                        <a class="item" data-tab="first/b" (click)="filter('oxygen')">
-                            Oxygen
-                        </a>
-                        <a class="item" data-tab="first/c" (click)="filter('transportation')">
-                            Transportation
-                        </a>
-                        <a class="item" data-tab="first/d" (click)="filter('misc')">
-                            Miscellaneous
-                        </a>
-                    </div>
-                </div>
-                <div class="twelve wide stretched column" >
-                    <div class="ui active tab segment" data-tab="first/a">
-                        <table class="ui striped table">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Request for</th>
-                                    <th>Urgency</th>
-                                    <th>Address</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let data of list">
-                                    <td>{{data.firstname}}
-                                        {{data.lastname}}</td>
-                                    <td>{{data.requestfor}}</td>
-                                    <td>
-                                        {{data.urgency}}</td>
-                                    <td>
-                                        {{data.address}}</td>
-                                </tr>
-                               </tbody>
-                        </table>
-                    </div>
-                    <div class="ui tab segment" data-tab="first/b">
-                        <table class="ui striped table">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Request for</th>
-                                    <th>Urgency</th>
-                                    <th>Address</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                              <tr *ngFor="let data of list">
-                                <td>{{data.firstname}}
-                                    {{data.lastname}}</td>
-                                <td>{{data.requestfor}}</td>
-                                <td>
-                                    {{data.urgency}}</td>
-                                <td>
-                                    {{data.address}}</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="ui tab segment" data-tab="first/c">
-                        <table class="ui striped table">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Request for</th>
-                                    <th>Urgency</th>
-                                    <th>Address</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                              <tr *ngFor="let data of list">
-                                <td>{{data.firstname}}
-                                    {{data.lastname}}</td>
-                                <td>{{data.requestfor}}</td>
-                                <td>
-                                    {{data.urgency}}</td>
-                                <td>
-                                    {{data.address}}</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="ui tab segment" data-tab="first/d">
-                        <table class="ui striped table">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Request for</th>
-                                    <th>Urgency</th>
-                                    <th>Address</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                              <tr *ngFor="let data of list">
-                                <td>{{data.firstname}}
-                                    {{data.lastname}}</td>
-                                <td>{{data.requestfor}}</td>
-                                <td>
-                                    {{data.urgency}}</td>
-                                <td>
-                                    {{data.address}}</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-            <div class="extra content">
-              <div class="ui two buttons">
-                <div class="ui red button">More Info</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="four wide computer eight wide tablet sixteen wide mobile column">
-          <div class="ui fluid card">
-            <div class="content">
-              <div class="ui right floated header green">
-                <i class="icon heart"></i>
-              </div>
-              <div class="header">
-                <div class="ui header green">Negative Cases:<br>
-                  {{li.tested_negative}}
-                </div>
-              </div>
-              <div class="description">
-                People with negative test results.
-              </div>
-            </div>
-            <div class="extra content">
-              <div class="ui two buttons">
-                <div class="ui green button">More Info</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="four wide computer eight wide tablet sixteen wide mobile column">
-          <div class="ui fluid card">
-            <div class="content">
-              <div class="ui right floated header gray">
-                <i class="icon user times"></i>
-              </div>
-              <div class="header">
-                <div class="ui gray header">Deaths:
-                  <br>
-                  {{li.deaths}}</div>
-              </div>
-              <div class="description">
-                Total number of death by corona.
-              </div>
-            </div>
-            <div class="extra content">
-              <div class="ui two buttons">
-                <div class="ui gray button">More Info</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="four wide computer eight wide tablet sixteen wide mobile column">
-          <div class="ui fluid card">
-            <div class="content">
-              <div class="ui right floated header blue">
-                <i class="icon archive"></i>
-              </div>
-              <div class="header">
-                <div class="ui blue header">Total tests:
-                  <br>
-                  {{li.tested_total}}</div>
-              </div>
-              <div class="description">
-                Total tests conducted.
-              </div>
-            </div>
-            <div class="extra content">
-              <div class="ui two buttons">
-                <div class="ui blue button">More Info</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="ui segment">
+    <div class="segment">
       <div class="content">
-        <div class="ui blue dividing header">
+        <div class="ui gray dividing header">
           <i class="info icon"></i>
           <div class="content">
-            Current Covid status in Kathamndu
+            Current Covid status in Nepal
             <div class="sub header"></div>
           </div>
         </div>
@@ -336,8 +154,114 @@
                 </div>
                 <div class="header">
                   <div class="ui red header">
-                    Daily Cases:
+                    Positive Cases:
                     <br>{{li.tested_positive}}
+                  </div>
+                </div>
+                <div class="description">
+                  People with positive test results.
+                </div>
+              </div>
+              <div class="extra content">
+                <div class="ui two buttons">
+                  <div class="ui red button">More Info</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide computer eight wide tablet sixteen wide mobile column">
+            <div class="ui fluid card">
+              <div class="content">
+                <div class="ui right floated header green">
+                  <i class="icon heart"></i>
+                </div>
+                <div class="header">
+                  <div class="ui header green">Negative Cases:<br>
+                    {{li.tested_negative}}
+                  </div>
+                </div>
+                <div class="description">
+                  People with negative test results.
+                </div>
+              </div>
+              <div class="extra content">
+                <div class="ui two buttons">
+                  <div class="ui green button">More Info</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide computer eight wide tablet sixteen wide mobile column">
+            <div class="ui fluid card">
+              <div class="content">
+                <div class="ui right floated header gray">
+                  <i class="icon user times"></i>
+                </div>
+                <div class="header">
+                  <div class="ui gray header">Deaths:
+                    <br>
+                    {{li.deaths}}</div>
+                </div>
+                <div class="description">
+                  Total number of death by corona.
+                </div>
+              </div>
+              <div class="extra content">
+                <div class="ui two buttons">
+                  <div class="ui gray button">More Info</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide computer eight wide tablet sixteen wide mobile column">
+            <div class="ui fluid card">
+              <div class="content">
+                <div class="ui right floated header blue">
+                  <i class="icon archive"></i>
+                </div>
+                <div class="header">
+                  <div class="ui blue header">Total tests:
+                    <br>
+                    {{li.tested_total}}</div>
+                </div>
+                <div class="description">
+                  Total tests conducted.
+                </div>
+              </div>
+              <div class="extra content">
+                <div class="ui two buttons">
+                  <div class="ui blue button">More Info</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <select class="ui search dropdown" name="district" [(ngModel)]="district" (ngModelChange)="loadDatabyDistrict()">
+      <option value="">District</option>
+      <option [value]="data.id" *ngFor="let data of dist">{{data.title}}</option>
+      </select>
+    <div class="ui segment">
+      <div class="content">
+        <div class="ui blue dividing header">
+          <i class="info icon"></i>
+          <div class="content">
+            Current Covid status in {{data.title}}
+            <div class="sub header"></div>
+          </div>
+        </div>
+        <div class="ui grid stackable padded">
+          <div class="four wide computer eight wide tablet sixteen wide mobile column">
+            <div class="ui fluid card">
+              <div class="content">
+                <div class="ui right floated header red">
+                  <i class="icon heartbeat"></i>
+                </div>
+                <div class="header">
+                  <div class="ui red header">
+                    Total Cases:
+                    <br>
                   </div>
                 </div>
                 <div class="description">
