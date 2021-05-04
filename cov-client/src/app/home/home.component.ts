@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
             private httpservice : AppHttpService,
     ){
     this.li={};
-    this.dist={};
-    this.district="";
+    this.dist= new Object();
+    this.district="1";
 }
 
   ngOnInit(): void {
@@ -33,6 +33,13 @@ export class HomeComponent implements OnInit {
     .subscribe((response) => {
       this.dist=response;
     })
+    this.http.get('https://data.askbhunte.com/api/v1/districts/'+this.district)
+      .subscribe((response) => {
+        this.dist.title = response['title'];
+        this.dist.title_ne = response['title_ne'];
+        this.dist.covid_summary = response['covid_summary'];
+        console.log(response);
+      })
 }
 filter(type:string){
   this.list =[];
@@ -48,8 +55,10 @@ filter(type:string){
   loadDatabyDistrict(){
       this.http.get('https://data.askbhunte.com/api/v1/districts/'+this.district)
       .subscribe((response) => {
-        this.dist=response;
-        console.log(this.dist);
+        this.dist.title = response['title'];
+        this.dist.title_ne = response['title_ne'];
+        this.dist.covid_summary = response['covid_summary'];
+        console.log(response);
       })
   }
 }

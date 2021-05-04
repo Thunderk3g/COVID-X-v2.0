@@ -247,7 +247,7 @@
         <div class="ui blue dividing header">
           <i class="info icon"></i>
           <div class="content">
-            Current Covid status in {{data.title}}
+            Current Covid status in {{dist?.title}}&nbsp;|&nbsp;{{dist?.title_ne}}
             <div class="sub header"></div>
           </div>
         </div>
@@ -260,7 +260,7 @@
                 </div>
                 <div class="header">
                   <div class="ui red header">
-                    Total Cases:
+                    Total Active Cases:{{dist?.covid_summary?.active}}
                     <br>
                   </div>
                 </div>
@@ -282,8 +282,7 @@
                   <i class="icon heart"></i>
                 </div>
                 <div class="header">
-                  <div class="ui header green">Daily Recovered:<br>
-                    {{li.recovered}}
+                  <div class="ui header green">Total Recovered: {{dist?.covid_summary?.recovered}}<br>
                   </div>
                 </div>
                 <div class="description">
@@ -304,9 +303,8 @@
                   <i class="icon user times"></i>
                 </div>
                 <div class="header">
-                  <div class="ui gray header">Daily Deaths:
-                    <br>
-                    {{li.deaths}}</div>
+                  <div class="ui gray header">Total Deaths: {{dist?.covid_summary?.death}}
+                  </div>
                 </div>
                 <div class="description">
                   Daily death count.
@@ -319,28 +317,7 @@
               </div>
             </div>
           </div>
-          <div class="four wide computer eight wide tablet sixteen wide mobile column">
-            <div class="ui fluid card">
-              <div class="content">
-                <div class="ui right floated header blue">
-                  <i class="icon archive"></i>
-                </div>
-                <div class="header">
-                  <div class="ui blue header">Total tests:
-                    <br>
-                    {{li.tested_total}}</div>
-                </div>
-                <div class="description">
-                  Total tests conducted.
-                </div>
-              </div>
-              <div class="extra content">
-                <div class="ui two buttons">
-                  <div class="ui blue button">More Info</div>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
