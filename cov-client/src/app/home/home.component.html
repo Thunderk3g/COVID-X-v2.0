@@ -24,21 +24,21 @@
             <div class="ui grid">
                 <div class="four wide column">
                     <div class="ui vertical fluid tabular menu">
-                        <a class="item active" data-tab="first/a">
+                        <a class="item active" data-tab="first/a" (click)="filter('bed')">
                             Bed
                         </a>
-                        <a class="item" data-tab="first/b">
+                        <a class="item" data-tab="first/b" (click)="filter('oxygen')">
                             Oxygen
                         </a>
-                        <a class="item" data-tab="first/c">
+                        <a class="item" data-tab="first/c" (click)="filter('transportation')">
                             Transportation
                         </a>
-                        <a class="item" data-tab="first/d">
+                        <a class="item" data-tab="first/d" (click)="filter('misc')">
                             Miscellaneous
                         </a>
                     </div>
                 </div>
-                <div class="twelve wide stretched column">
+                <div class="twelve wide stretched column" >
                     <div class="ui active tab segment" data-tab="first/a">
                         <table class="ui striped table">
                             <thead>
@@ -50,7 +50,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let data of data">
+                                <tr *ngFor="let data of list">
                                     <td>{{data.firstname}}
                                         {{data.lastname}}</td>
                                     <td>{{data.requestfor}}</td>
@@ -72,7 +72,17 @@
                                     <th>Address</th>
                                 </tr>
                             </thead>
-                            <tbody></tbody>
+                            <tbody>
+                              <tr *ngFor="let data of list">
+                                <td>{{data.firstname}}
+                                    {{data.lastname}}</td>
+                                <td>{{data.requestfor}}</td>
+                                <td>
+                                    {{data.urgency}}</td>
+                                <td>
+                                    {{data.address}}</td>
+                            </tr>
+                            </tbody>
                         </table>
                     </div>
                     <div class="ui tab segment" data-tab="first/c">
@@ -85,7 +95,17 @@
                                     <th>Address</th>
                                 </tr>
                             </thead>
-                            <tbody></tbody>
+                            <tbody>
+                              <tr *ngFor="let data of list">
+                                <td>{{data.firstname}}
+                                    {{data.lastname}}</td>
+                                <td>{{data.requestfor}}</td>
+                                <td>
+                                    {{data.urgency}}</td>
+                                <td>
+                                    {{data.address}}</td>
+                            </tr>
+                            </tbody>
                         </table>
                     </div>
                     <div class="ui tab segment" data-tab="first/d">
@@ -98,7 +118,17 @@
                                     <th>Address</th>
                                 </tr>
                             </thead>
-                            <tbody></tbody>
+                            <tbody>
+                              <tr *ngFor="let data of list">
+                                <td>{{data.firstname}}
+                                    {{data.lastname}}</td>
+                                <td>{{data.requestfor}}</td>
+                                <td>
+                                    {{data.urgency}}</td>
+                                <td>
+                                    {{data.address}}</td>
+                            </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>

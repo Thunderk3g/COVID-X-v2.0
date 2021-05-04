@@ -41,6 +41,6 @@ router.get('/entries', async function(req, res, next) {
 });
 router.get('/allentries', async function(req, res, next) {
   const entries = await Entry.find().sort({createdAt: -1});
-  res.send(JSON.stringify(entries));
+  res.send(entries);
 });
 module.exports = router;

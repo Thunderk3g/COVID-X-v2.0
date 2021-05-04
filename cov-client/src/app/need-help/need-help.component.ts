@@ -17,7 +17,7 @@ export class NeedHelpComponent implements OnInit {
   lastname :string;
   gender:string;
   address: string;
-  urgency: string;
+  asdf: string;
   email: string;
   requestfor: string;
   mobilenumber: string;
@@ -26,7 +26,7 @@ export class NeedHelpComponent implements OnInit {
     ) {
       this.gender="";
       this.requestfor="";
-      this.urgency="";
+      this.asdf="";
     }
 
   ngOnInit(): void {
@@ -41,7 +41,7 @@ export class NeedHelpComponent implements OnInit {
       firstname: this.firstname,
       lastname :this.lastname,
       address: this.address,
-      urgency: this.urgency,
+      urgency: this.asdf,
       gender:this.gender,
       email: this.email,
       requestfor: this.requestfor,
