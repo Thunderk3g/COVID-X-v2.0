@@ -344,6 +344,7 @@
         <div class="content">
           Current Covid status in {{dist?.title}}&nbsp;|&nbsp;{{dist?.title_ne}}
           <div class="sub header">
+            <br>
             <label>Select District </label>
             <select class="ui search dropdown" name="district" [(ngModel)]="district"
               (ngModelChange)="loadDatabyDistrict()">
@@ -367,7 +368,7 @@
                 </div>
               </div>
               <div class="description">
-                Daily positive case for Kathmandu.
+                Totla active case in {{dist?.title}}.
               </div>
             </div>
             <div class="extra content">
@@ -388,7 +389,7 @@
                 </div>
               </div>
               <div class="description">
-                People with negative test results.
+                People revovered after being tested positive.
               </div>
             </div>
             <div class="extra content">
