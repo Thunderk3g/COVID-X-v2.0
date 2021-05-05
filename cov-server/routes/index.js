@@ -50,7 +50,7 @@ router.post('/contribute', async function(req, res, next) {
 router.post('/contributeHelp', async function(req, res, next) {
   console.log(req.body);
   const entry = await Contribute.create({
-    fulltname : req.body.fullname,
+    fullname : req.body.fullname,
     address : req.body.address,
     email : req.body.email,
     interestedfield: req.body.interestedfield,
@@ -77,6 +77,7 @@ router.post('/offerHelp', async function(req, res, next) {
     address : req.body.address,
     email : req.body.email,
     interestedfield: req.body.interestedfield,
+
   });
   res.send(JSON.stringify(entry));
 });

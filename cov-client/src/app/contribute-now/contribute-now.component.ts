@@ -6,27 +6,33 @@ import "firebase/firestore";
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { WindowService } from '../common/window/window.service';
 import { Router } from '@angular/router';
+import { AppHttpService } from '../common/app-http.service';
+import { AuthService } from '../common/window/auth.service';
 
+import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-contribute-now',
   templateUrl: './contribute-now.component.html',
   styleUrls: ['./contribute-now.component.scss']
 })
 export class ContributeNowComponent implements OnInit,AfterViewInit{
-  provider = new firebase.auth.GoogleAuthProvider();
-  fbprovider = new firebase.auth.FacebookAuthProvider();
-  // sentcode: boolean = false;
-  googleSignedIn: boolean = false;
-  // facebookSignedIn: boolean = false;
-  phoneNumber:string;
+
   user: any;
-  fbuser:any;
-  otp:string;
+
   windowRef: any;
   li:any;
 
-  /* Contact Details */
-
+  /* Contribute-Now Variable Details */
+entryContributed: boolean = false;
+captchaBoolean: boolean = false;
+contributeForm: FormGroup;
+data: any;
+fullname: string;
+address: string;
+mobilenumber: string;
+email: string;
+interestedfield: string;
+click : boolean = false;
   firebaseConfig = {
     apiKey: 'AIzaSyALuXsjDCnpBd3-QEdR7l5gIYmDoMegsIE',
     authDomain: 'covid-x-90730.firebaseapp.com',
@@ -40,64 +46,15 @@ export class ContributeNowComponent implements OnInit,AfterViewInit{
       public afAuth: AngularFireAuth,
       private windowService : WindowService,
       private router: Router,
-
+      auth:AuthService ,
+      private httpservice : AppHttpService,
   ) {
-
+    this.interestedfield="";
     firebase.initializeApp(this.firebaseConfig);
     this.windowRef = this.windowService.windowRef;
    }
 
-   googleSignInViaPopup(){
-    firebase.auth()
-    .signInWithPopup(this.provider)
-    .then((result) => {
-      /** @type {firebase.auth.OAuthCredential} */
-      var credential = result.credential;
-      // The signed-in user info.
-      var user = result.user;
-      console.log(user);
-      this.li=user;
-      this.googleSignedIn = true;
-    }).catch((error) => {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
-    });
-   }
-
-  //  facebookSignInViaPopup(){
-  //   firebase
-  //   .auth()
-  //   .signInWithPopup(this.fbprovider)
-  //   .then((result) => {
-  //     /** @type {firebase.auth.OAuthCredential} */
-  //     var credential = result.credential;
-
-  //     // The signed-in user info.
-  //     var fbuser = result.user;
-  //     this.facebookSignedIn = true;
-  //     console.log(fbuser);
-  //     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-  //   //   var accessToken = credential.accessToken;
-  //     // ...
-  //   })
-  //   .catch((error) => {
-  //     // Handle Errors here.
-  //     var errorCode = error.code;
-  //     var errorMessage = error.message;
-  //     // The email of the user's account used.
-  //     var email = error.email;
-  //     // The firebase.auth.AuthCredential type that was used.
-  //     var credential = error.credential;
-  //         // ...
-  //   });
-  //  }
-   ngOnInit(){
+   ngOnInit(): void{
     this.windowRef = this.windowService.windowRef;
    }
 
@@ -106,34 +63,27 @@ export class ContributeNowComponent implements OnInit,AfterViewInit{
     {
       size:'normal',
       callback:(response) => {
-        //TODO
+        this.captchaBoolean =true;
       }
     });
     this.windowRef.recaptchaVerifier.render().then((widgetId: any) => {
       this.windowRef.recaptchaWidgetId = widgetId;
     });
   }
-//   sendOTP(){
-//      console.log(this.phoneNumber);
-//     const appVerifier = this.windowRef.recaptchaVerifier;
-
-//     firebase.auth().signInWithPhoneNumber(this.phoneNumber, appVerifier)
-//       .then(confirmationResult => {
-//         console.log(confirmationResult);
-//         this.windowRef.confirmationResult = confirmationResult;
-//         this.sentcode = true;
-//       })
-//       .catch(error => console.log(error));
-
-//   }
-//   verifyOTP() {
-//     this.windowRef.confirmationResult
-//       .confirm(this.otp)
-//       .then((userCredentials)=> console.log(userCredentials));
-//   }
-//   e164(phone: any) {
-//     const num = phone.country + phone.area + phone.prefix + phone.line
-//     return `+${num}`
-//   }
-// }
+  contributeEntry(){
+    this.httpservice.contribute({
+      fullname: this.fullname,
+      mobilenumber :this.mobilenumber,
+      address: this.address,
+      interestedfield: this.interestedfield,
+      email:this.email
+    }).subscribe((data) => {
+      this.data = data.body;
+      console.log("DATA PASYO PASYO");
+    });
+}
+onButtonClick(){
+  this.click = !this.click;
+  this.entryContributed = true;
+}
 }
