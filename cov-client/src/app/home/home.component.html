@@ -1,5 +1,6 @@
 <app-header></app-header>
-
+<!--POP-UP FORM-->
+<ng-container *ngIf="show">
 <div class="form-popup-bg">
   <div class="ui grid sem">
     <div class="three wide computer two wide tablet one wide mobile column"></div>
@@ -9,8 +10,8 @@
         <div class="header">
           Offer requested help
         </div>
-        <button id="btnCloseForm" class="close-button">X</button>
-      </div>
+        <button id="btnCloseForm" class="close-button" (click)="toggleclose()" >X</button>
+    </div>
 
       <div class="ui segments" style="top: 20px; margin-bottom: 20px">
         <div class="ui segment">
@@ -72,7 +73,7 @@
     </div>
   </div>
 </div>
-
+</ng-container>
 <!-- SECTION BREAK-->
 <div class="pusher">
   <div class="main-content">
@@ -102,7 +103,7 @@
     <div class="ui grid">
       <div class="four wide column">
         <div class="ui vertical fluid tabular menu">
-          <a class="item active" data-tab="first/a">
+          <a class="item active" data-tab="first/a" (click)="filter('bed')">
             Bed
           </a>
           <a class="item" data-tab="first/b" (click)="filter('oxygen')">
@@ -138,9 +139,9 @@
                 <td>
                   {{data.address}}</td>
                 <td>
-                  <div class="ui inverted positive button help-button">
-                    <i class="help icon"></i> Offer Help
-                  </div>
+                  <button (click)="toggle()" id="bt">
+                    OFFER HELP
+                </button>
                 </td>
               </tr>
             </tbody>
@@ -167,9 +168,9 @@
                 <td>
                   {{data.address}}</td>
                 <td>
-                  <div class="ui inverted positive button help-button">
-                    <i class="help icon"></i> Offer Help
-                  </div>
+                  <button (click)="toggle()" id="bt">
+                    OFFER HELP
+                </button>
                 </td>
               </tr>
             </tbody>
@@ -196,9 +197,9 @@
                 <td>
                   {{data.address}}</td>
                 <td>
-                  <div class="ui inverted positive button help-button">
-                    <i class="help icon"></i> Offer Help
-                  </div>
+                  <button (click)="toggle()" id="bt">
+                    OFFER HELP
+                </button>
                 </td>
               </tr>
             </tbody>
@@ -225,9 +226,9 @@
                 <td>
                   {{data.address}}</td>
                 <td>
-                  <div class="ui inverted positive button help-button">
-                    <i class="help icon"></i> Offer Help
-                  </div>
+                  <button (click)="toggle()" id="bt">
+                    OFFER HELP
+                </button>
                 </td>
               </tr>
             </tbody>
