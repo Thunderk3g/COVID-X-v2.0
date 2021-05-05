@@ -14,6 +14,8 @@ import { WindowService } from './common/window/window.service';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NeedHelpComponent } from './need-help/need-help.component';
 import { AppHttpService } from './common/app-http.service';
+import { AdminComponent } from './admin/admin.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +26,8 @@ import { AppHttpService } from './common/app-http.service';
     DashboardComponent,
     LandingPageComponent,
     NeedHelpComponent,
+    AdminComponent,
+    AdminDashboardComponent,
 
   ],
   imports: [
