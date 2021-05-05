@@ -22,4 +22,14 @@ entries(): Observable<any> {
     observe: 'response',
   });
 }
+contribute(user: any): Observable<any> {
+  return this.http.post<any>( 'http://localhost:3000/contributeHelp' , user ,{
+    observe: 'response',
+  });
+}
+offer(): Observable<any> {
+  return this.http.post<any>( 'http://localhost:3000/offerHelp' , {
+    observe: 'response',
+  });
+}
 }

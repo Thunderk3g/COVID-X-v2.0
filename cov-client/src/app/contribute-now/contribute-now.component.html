@@ -15,21 +15,12 @@
       </div>
 
       <div class="ui secondary segment">
-        <form id="helpForm" class="ui grid form" style="padding: 10px">
+        <form id="helpForm" class="ui grid form" style="padding: 10px" (ngSubmit)="contributeEntry()" >
           <div class="row field">
-            <label class="six wide column" for="firstname">First name</label>
+            <label class="six wide column" for="firstname">Full Name</label>
             <div class="eight wide column">
               <div class="ui input">
-                <input id="firstname" name="firstname" type="text" placeholder="First name" />
-              </div>
-            </div>
-          </div>
-
-          <div class="row field">
-            <label class="six wide column" for="lastname">Last name</label>
-            <div class="eight wide column">
-              <div class="ui input">
-                <input id="lastname" name="lastname" type="text" placeholder="Last name">
+                <input id="firstname" name="firstname" type="text" [(ngModel)]="fullname"  placeholder="Full Name" />
               </div>
             </div>
           </div>
@@ -38,16 +29,23 @@
             <label class="six wide column" for="address">Address</label>
             <div class="eight wide column">
               <div class="ui input">
-                <input id="address" name="address" type="text" placeholder="address">
+                <input id="address" name="address" type="text" [(ngModel)]="address" placeholder="address">
               </div>
             </div>
           </div>
-
+          <div class="row field">
+            <label class="six wide column" for="email">Email</label>
+            <div class="eight wide column">
+              <div class="ui input">
+                <input id="email" name="email" type="text" [(ngModel)]="email" placeholder="address">
+              </div>
+            </div>
+          </div>
           <div class="row field">
             <label class="six wide column" for="contact">Contact No.</label>
             <div class="eight wide column">
               <div class="ui input">
-                <input id="contact" name="contact" type="text" placeholder="Contact Number">
+                <input id="contact" name="contact" type="text" [(ngModel)]="mobilenumber" placeholder="Contact Number">
               </div>
             </div>
           </div>
@@ -56,11 +54,11 @@
             <label class="six wide column" for="typeOfReq">Volunteer for</label>
             <div class="eight wide column">
 
-              <select class="ui dropdown" name="volunteerfor">
+              <select class="ui dropdown" name="volunteerfor" [(ngModel)]="interestedfield">
                 <option value="" selected disabled>-- Select --</option>
                 <option value="tech">Technical Department</option>
                 <option value="marketing">Marketing</option>
-                <option value="data_entry">Data Entry</option>
+                <option value="data entry">Data Entry</option>
               </select>
             </div>
           </div>
@@ -73,10 +71,16 @@
           <div class="row">
             <label class="six wide column"></label>
             <div class="eight wide column">
-              <button type="submit" class="ui primary button">Contribute Now</button>
+              <button type="submit" class="ui primary button" *ngIf="captchaBoolean">Offer Help</button>
             </div>
           </div>
-
+          <div class="row" *ngIf="entryContributed">
+            <label class="six wide column"></label>
+            <div class="eight wide column">
+                Thank you for providing your information. We will contact you very soon !
+                <button type="submit" class="ui primary button" routerLink="/home-component">Go to Home page</button>
+            </div>
+          </div>
         </form>
       </div>
     </div>
