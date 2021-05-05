@@ -3,7 +3,10 @@ var router = express.Router();
 const Entry = require('../models/entrymodel');
 const Contribute = require('../models/contributemodel');
 const Help = require('../models/offerhelpmodel');
-const AdminLogin = require('../models/offerhelpmodel');
+const User = require('../models/offerhelpmodel');
+const AdminLogin = require('../models/adminloginmodel');
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Nepal-Helps' });
@@ -95,19 +98,18 @@ router.get('/allentries', async function(req, res, next) {
   res.send(entries);
 });
 
-
+/* Register Admin*/
+router.post('/register',async function(req,res,next){
+   const user  = await AdminLogin.create({
+    username: req.body.username,
+    password: req.body.password
+  });
+  AdminLogin.addUser(user,(err,result)=>{
+    if(err){
+      return res.json({success: false ,message:err});
+    }
+    return res.json({success:true, message: result});
+  })
+})
 /* ADMIN DASHBOARD */
-router.post('/adminlogin', async function(req, res, next) {
-  const entry = await AdminLogin.create({
-    username : req.body.username,
-    password : req.body.password
-  });
-  res.render('success', { title: 'COVID-X' , entry : entry });
-});
-router.post('/adminlogin', async function(req, res, next) {
-  const entry = await Help.create({
-    username : req.body.username,
-    password : req.body.password
-  });
-  res.send(JSON.stringify(entry));
-});
+router.post('/adminlogin' ,async function(req,res,next){AdminLogin.login(req,res)});

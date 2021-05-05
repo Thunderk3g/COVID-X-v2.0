@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppHttpService } from '../common/app-http.service';
 
 @Component({
   selector: 'app-admin',
@@ -6,10 +7,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+  name:any;
+  password: any;
+  username: any;
+  loginAdmin: boolean = false;
+  data: any;
 
-  constructor() { }
+  constructor(private httpservice : AppHttpService) { }
 
   ngOnInit(): void {
   }
+  adminLogin(){
+    this.httpservice.adminLogin({
+      username: this.username,
+      password :this.password
+    }).subscribe((data) => {
+      this.name=data;
+      this.data = data.body;
+      console.log("Admin Logged In");
+      this.loginAdmin = true;
 
+    });
+}
 }

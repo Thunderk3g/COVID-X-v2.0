@@ -32,4 +32,9 @@ offer(user: any): Observable<any> {
     observe: 'response',
   });
 }
+adminLogin(user: any): Observable<any> {
+  return this.http.post<any>( 'http://localhost:3000/adminlogin' , user,{
+    observe: 'response',
+  });
+}
 }
