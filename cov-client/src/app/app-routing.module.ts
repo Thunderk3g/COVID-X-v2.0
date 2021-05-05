@@ -6,7 +6,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { NeedHelpComponent} from './need-help/need-help.component';
+import { NeedHelpComponent } from './need-help/need-help.component';
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'home-component', component: HomeComponent },

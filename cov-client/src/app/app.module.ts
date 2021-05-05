@@ -35,11 +35,11 @@ import { AppHttpService } from './common/app-http.service';
     ContributeNowModule,
     FormsModule
   ],
-  exports:[
+  exports: [
     HeaderComponent,
     FooterComponent
   ],
-  providers: [WindowService,AppHttpService],
+  providers: [WindowService, AppHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
