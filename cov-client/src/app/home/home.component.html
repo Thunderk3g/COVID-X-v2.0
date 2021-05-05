@@ -30,13 +30,13 @@
             <a class="item active" data-tab="first/a">
               Bed
             </a>
-            <a class="item" data-tab="first/b">
+            <a class="item" data-tab="first/b" (click)="filter('oxygen')">
               Oxygen
             </a>
-            <a class="item" data-tab="first/c">
+            <a class="item" data-tab="first/c" (click)="filter('transportation')">
               Transportation
             </a>
-            <a class="item" data-tab="first/d">
+            <a class="item" data-tab="first/d" (click)="filter('miscellanous')">
               Miscellaneous
             </a>
           </div>
@@ -53,7 +53,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let data of data">
+                <tr *ngFor="let data of list">
                   <td>{{data.firstname}}
                     {{data.lastname}}</td>
                   <td>{{data.requestfor}}</td>
@@ -65,7 +65,7 @@
               </tbody>
             </table>
           </div>
-          <div class="ui tab segment" data-tab="first/b">
+          <div class="ui tab segment" data-tab="first/b" >
             <table class="ui striped table">
               <thead>
                 <tr>
@@ -75,7 +75,17 @@
                   <th>Address</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+                <tr *ngFor="let data of list">
+                  <td>{{data.firstname}}
+                    {{data.lastname}}</td>
+                  <td>{{data.requestfor}}</td>
+                  <td>
+                    {{data.urgency}}</td>
+                  <td>
+                    {{data.address}}</td>
+                </tr>
+              </tbody>
             </table>
           </div>
           <div class="ui tab segment" data-tab="first/c">
@@ -88,7 +98,17 @@
                   <th>Address</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+                <tr *ngFor="let data of list">
+                  <td>{{data.firstname}}
+                    {{data.lastname}}</td>
+                  <td>{{data.requestfor}}</td>
+                  <td>
+                    {{data.urgency}}</td>
+                  <td>
+                    {{data.address}}</td>
+                </tr>
+              </tbody>
             </table>
           </div>
           <div class="ui tab segment" data-tab="first/d">
@@ -101,7 +121,17 @@
                   <th>Address</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+                <tr *ngFor="let data of list">
+                  <td>{{data.firstname}}
+                    {{data.lastname}}</td>
+                  <td>{{data.requestfor}}</td>
+                  <td>
+                    {{data.urgency}}</td>
+                  <td>
+                    {{data.address}}</td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
@@ -211,12 +241,16 @@
         </div>
       </div>
     </div>
+    <select class="ui search dropdown" name="district" [(ngModel)]="district" (ngModelChange)="loadDatabyDistrict()">
+      <option value="">District</option>
+      <option [value]="data.id" *ngFor="let data of dist">{{data.title}}</option>
+      </select>
     <div class="ui segment">
       <div class="content">
         <div class="ui blue dividing header">
           <i class="info icon"></i>
           <div class="content">
-            Current Covid status in Kathamndu
+            Current Covid status in {{dist?.title}}&nbsp;|&nbsp;{{dist?.title_ne}}
             <div class="sub header"></div>
           </div>
         </div>
@@ -229,8 +263,8 @@
                 </div>
                 <div class="header">
                   <div class="ui red header">
-                    Daily Cases:
-                    <br>{{li.tested_positive}}
+                    Total Active Cases:{{dist?.covid_summary?.active}}
+                    <br>
                   </div>
                 </div>
                 <div class="description">
@@ -251,8 +285,7 @@
                   <i class="icon heart"></i>
                 </div>
                 <div class="header">
-                  <div class="ui header green">Daily Recovered:<br>
-                    {{li.recovered}}
+                  <div class="ui header green">Total Recovered: {{dist?.covid_summary?.recovered}}<br>
                   </div>
                 </div>
                 <div class="description">
@@ -273,9 +306,8 @@
                   <i class="icon user times"></i>
                 </div>
                 <div class="header">
-                  <div class="ui gray header">Daily Deaths:
-                    <br>
-                    {{li.deaths}}</div>
+                  <div class="ui gray header">Total Deaths: {{dist?.covid_summary?.death}}
+                  </div>
                 </div>
                 <div class="description">
                   Daily death count.
@@ -288,28 +320,7 @@
               </div>
             </div>
           </div>
-          <div class="four wide computer eight wide tablet sixteen wide mobile column">
-            <div class="ui fluid card">
-              <div class="content">
-                <div class="ui right floated header blue">
-                  <i class="icon archive"></i>
-                </div>
-                <div class="header">
-                  <div class="ui blue header">Total tests:
-                    <br>
-                    {{li.tested_total}}</div>
-                </div>
-                <div class="description">
-                  Total tests conducted.
-                </div>
-              </div>
-              <div class="extra content">
-                <div class="ui two buttons">
-                  <div class="ui blue button">More Info</div>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>

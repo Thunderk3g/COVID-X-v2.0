@@ -30,6 +30,7 @@ import { AppHttpService } from './common/app-http.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     ContributeNowModule,
     FormsModule
