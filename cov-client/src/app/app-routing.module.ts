@@ -7,8 +7,10 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NeedHelpComponent } from './need-help/need-help.component';
+import {AdminComponent} from './admin/admin.component';
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
+  { path: 'admin-component', component: AdminComponent },
   { path: 'home-component', component: HomeComponent },
   { path: 'contribute-now-component', component: ContributeNowComponent },
   { path: 'need-help', component: NeedHelpComponent },
