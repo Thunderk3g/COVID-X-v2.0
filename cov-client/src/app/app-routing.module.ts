@@ -7,12 +7,12 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NeedHelpComponent } from './need-help/need-help.component';
-import {AdminComponent} from './admin/admin.component';
-import {AdminDashboardComponent} from './admin-dashboard/admin-dashboard.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'admin-component', component: AdminComponent },
-  { path: 'admind-dashboard-component', component: AdminDashboardComponent },
+  { path: 'admin-dashboard-component', component: AdminDashboardComponent },
   { path: 'home-component', component: HomeComponent },
   { path: 'contribute-now-component', component: ContributeNowComponent },
   { path: 'need-help', component: NeedHelpComponent },
