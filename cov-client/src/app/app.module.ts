@@ -14,6 +14,7 @@ import { WindowService } from './common/window/window.service';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NeedHelpComponent } from './need-help/need-help.component';
 import { AppHttpService } from './common/app-http.service';
+import { VolunteerComponent } from './volunteer/volunteer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { AppHttpService } from './common/app-http.service';
     DashboardComponent,
     LandingPageComponent,
     NeedHelpComponent,
+    VolunteerComponent,
 
   ],
   imports: [

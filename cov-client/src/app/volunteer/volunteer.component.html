@@ -1,0 +1,77 @@
+<app-header></app-header>
+<div class="ui grid sem">
+  <div class="three wide computer two wide tablet one wide mobile column"></div>
+
+  <div class="ten wide computer eleven wide tablet fourteen wide mobile column">
+    <div class="ui info message" style="top: 15px;">
+      <div class="header">
+        Fill up this form for volunteering request
+      </div>
+    </div>
+
+    <div class="ui segments" style="top: 20px; margin-bottom: 20px">
+      <div class="ui segment">
+        <h4 class="ui header">Information Form</h4>
+      </div>
+
+      <div class="ui secondary segment">
+        <form id="helpForm" class="ui grid form" style="padding: 10px">
+          <div class="row field">
+            <label class="six wide column" for="firstname">First name</label>
+            <div class="eight wide column">
+              <div class="ui input">
+                <input id="firstname" name="firstname" type="text" placeholder="First name" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row field">
+            <label class="six wide column" for="lastname">Last name</label>
+            <div class="eight wide column">
+              <div class="ui input">
+                <input id="lastname" name="lastname" type="text" placeholder="Last name">
+              </div>
+            </div>
+          </div>
+
+          <div class="row field">
+            <label class="six wide column" for="address">Address</label>
+            <div class="eight wide column">
+              <div class="ui input">
+                <input id="address" name="address" type="text" placeholder="address">
+              </div>
+            </div>
+          </div>
+
+          <div class="row field">
+            <label class="six wide column" for="contact">Contact No.</label>
+            <div class="eight wide column">
+              <div class="ui input">
+                <input id="contact" name="contact" type="text" placeholder="Contact Number">
+              </div>
+            </div>
+          </div>
+
+          <div class="row field">
+            <label class="six wide column" for="typeOfReq">Volunteer for</label>
+            <div class="eight wide column">
+
+              <select class="ui dropdown" name="volunteerfor">
+                <option value="" selected disabled>-- Select --</option>
+                <option value="tech">Technical Department</option>
+                <option value="marketing">Marketing</option>
+                <option value="data_entry">Data Entry</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <label class="six wide column"></label>
+            <div class="eight wide column">
+              <button type="submit" class="ui primary button">Request Volunteering</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
