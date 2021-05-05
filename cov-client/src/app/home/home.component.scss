@@ -56,13 +56,13 @@
 
 .close-button {
   background: none;
-  color: #fff;
+  color: rgb(0, 0, 0);
   width: 40px;
-  height: 40px;
+  height: 100%;
   position: absolute;
   top: 0;
   right: 0;
-  border: solid 1px #fff;
+  border: none; // border: solid 1px rgb(121, 121, 121);
 }
 
 .form-popup-bg:before {
