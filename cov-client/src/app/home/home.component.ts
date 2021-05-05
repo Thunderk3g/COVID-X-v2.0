@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
   list:any;
   data:any;
   dist:any;
+  public show:boolean = false;
+  public buttonName:any = 'Show';
   constructor(private http : HttpClient,
             private httpservice : AppHttpService,
     ){
@@ -60,5 +62,19 @@ filter(type:string){
         this.dist.covid_summary = response['covid_summary'];
         console.log(response);
       })
+  }
+  toggle() {
+    this.show = !this.show;
+
+    // CHANGE THE NAME OF THE BUTTON.
+
+    if(this.show)
+      this.buttonName = "Hide";
+    else
+      this.buttonName = "Show";
+  }
+  toggleclose(){
+    this.show = !this.show;
+    this.buttonName = "Hide";
   }
 }
