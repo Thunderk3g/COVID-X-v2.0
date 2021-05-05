@@ -3,6 +3,7 @@ var router = express.Router();
 const Entry = require('../models/entrymodel');
 const Contribute = require('../models/contributemodel');
 const Help = require('../models/offerhelpmodel');
+const AdminLogin = require('../models/offerhelpmodel');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Nepal-Helps' });
@@ -67,17 +68,18 @@ router.post('/offer', async function(req, res, next) {
     contact : req.body.contact,
     address : req.body.address,
     addinformation : req.body.addinformation,
+    helpfor: req.body.helpfor
   });
   res.render('success', { title: 'COVID-X' , entry : entry });
 });
 router.post('/offerHelp', async function(req, res, next) {
   console.log(req.body);
   const entry = await Help.create({
-    fulltname : req.body.fullname,
+    fullname : req.body.fullname,
+    contact : req.body.contact,
     address : req.body.address,
-    email : req.body.email,
-    interestedfield: req.body.interestedfield,
-
+    addinformation : req.body.addinformation,
+    helpfor: req.body.helpfor
   });
   res.send(JSON.stringify(entry));
 });
@@ -93,3 +95,19 @@ router.get('/allentries', async function(req, res, next) {
   res.send(entries);
 });
 
+
+/* ADMIN DASHBOARD */
+router.post('/adminlogin', async function(req, res, next) {
+  const entry = await AdminLogin.create({
+    username : req.body.username,
+    password : req.body.password
+  });
+  res.render('success', { title: 'COVID-X' , entry : entry });
+});
+router.post('/adminlogin', async function(req, res, next) {
+  const entry = await Help.create({
+    username : req.body.username,
+    password : req.body.password
+  });
+  res.send(JSON.stringify(entry));
+});

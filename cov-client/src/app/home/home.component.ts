@@ -7,11 +7,19 @@ import { AppHttpService } from '../common/app-http.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
+  user: any;
+  selecteduser:any;
   district: any;
   li: any;
   list: any;
   data: any;
   dist: any;
+  fullname: any;
+  contact: any;
+  address:any;
+  addinformation: any;
+  public offerhelp: boolean = false;
   public show: boolean = false;
   public buttonName: any = 'Show';
   constructor(private http: HttpClient,
@@ -63,11 +71,9 @@ export class HomeComponent implements OnInit {
         console.log(response);
       })
   }
-  toggle() {
+  toggle(data) {
+    this.selecteduser = data
     this.show = !this.show;
-
-    // CHANGE THE NAME OF THE BUTTON.
-
     if (this.show)
       this.buttonName = "Hide";
     else
@@ -75,6 +81,22 @@ export class HomeComponent implements OnInit {
   }
   toggleclose() {
     this.show = !this.show;
+    this.fullname = "";
+    this.address ="";
+    this.contact="";
+    this.addinformation="";
     this.buttonName = "Hide";
   }
+  offerHelp(){
+    this.httpservice.offer({
+      fullname: this.fullname,
+      address: this.address,
+      contact: this.contact,
+      helpfor: this.selecteduser.firstname +" "+ this.selecteduser.lastname,
+      addinformation:this.addinformation
+    }).subscribe((data) => {
+      this.offerhelp =true;
+      console.log("Submit sucess");
+    });
+}
 }

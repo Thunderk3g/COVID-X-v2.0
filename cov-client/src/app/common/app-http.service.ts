@@ -27,8 +27,8 @@ contribute(user: any): Observable<any> {
     observe: 'response',
   });
 }
-offer(): Observable<any> {
-  return this.http.post<any>( 'http://localhost:3000/offerHelp' , {
+offer(user: any): Observable<any> {
+  return this.http.post<any>( 'http://localhost:3000/offerHelp' , user,{
     observe: 'response',
   });
 }

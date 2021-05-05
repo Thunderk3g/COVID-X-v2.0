@@ -19,21 +19,12 @@
           </div>
 
           <div class="ui secondary segment">
-            <form id="helpForm" class="ui grid form" style="padding: 10px">
+            <form id="helpForm" class="ui grid form" style="padding: 10px" (ngSubmit)="offerHelp()">
               <div class="row field">
-                <label class="six wide column" for="firstname">Full name</label>
+                <label class="six wide column" for="fullname">Full name</label>
                 <div class="eight wide column">
                   <div class="ui input">
-                    <input id="firstname" name="firstname" type="text" placeholder="First name" />
-                  </div>
-                </div>
-              </div>
-
-              <div class="row field">
-                <label class="six wide column" for="lastname">Offer Help For</label>
-                <div class="eight wide column">
-                  <div class="ui input">
-                    <input id="lastname" name="lastname" type="text" placeholder="">
+                    <input id="fullname" name="fullname" type="text" placeholder="full name"  [(ngModel)]="fullname"/>
                   </div>
                 </div>
               </div>
@@ -42,23 +33,25 @@
                 <label class="six wide column" for="address">Address</label>
                 <div class="eight wide column">
                   <div class="ui input">
-                    <input id="address" name="address" type="text" placeholder="address">
+                    <input id="address" name="address" type="text" placeholder="address" [(ngModel)]="address">
                   </div>
                 </div>
               </div>
 
               <div class="row field">
-                <label class="six wide column" for="contact">Contact No.</label>
+                <label class="six wide column" for="contact" >Contact No.</label>
                 <div class="eight wide column">
                   <div class="ui input">
-                    <input id="contact" name="contact" type="text" placeholder="Contact Number">
+                    <input id="contact" name="contact" type="text" placeholder="Contact Number" [(ngModel)]="contact" >
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <label class="six wide column"></label>
+              <div class="row field">
+                <label class="six wide column" for="address">Additional Information</label>
                 <div class="eight wide column">
-                  <div class="recaptcha-container" style="margin-top:10px" id="recaptcha-container"></div>
+                  <div class="ui input">
+                    <input id="addinformation" name="addinformation" type="text" placeholder="addinformation" [(ngModel)]="addinformation">
+                  </div>
                 </div>
               </div>
               <div class="row">
@@ -68,6 +61,7 @@
                 </div>
               </div>
             </form>
+            <div class="success-segment" *ngIf="offerhelp">THANK YOU FOR YOUR HELP</div>
           </div>
         </div>
       </div>
@@ -139,7 +133,7 @@
                 <td>
                   {{data.address}}</td>
                 <td>
-                  <button class="ui positive button" (click)="toggle()" id="bt">Offer Help</button>
+                  <button class="ui positive button" (click)="toggle(data)" id="bt">Offer Help</button>
                 </td>
               </tr>
             </tbody>
@@ -166,7 +160,7 @@
                 <td>
                   {{data.address}}</td>
                 <td>
-                  <button class="ui positive button" (click)="toggle()" id="bt">Offer Help</button>
+                  <button class="ui positive button" (click)="toggle(data)" id="bt">Offer Help</button>
                 </td>
               </tr>
             </tbody>
@@ -193,7 +187,7 @@
                 <td>
                   {{data.address}}</td>
                 <td>
-                  <button class="ui positive button" (click)="toggle()" id="bt">Offer Help</button>
+                  <button class="ui positive button" (click)="toggle(data)" id="bt">Offer Help</button>
                 </td>
               </tr>
             </tbody>
@@ -220,7 +214,7 @@
                 <td>
                   {{data.address}}</td>
                 <td>
-                  <button class="ui positive button" (click)="toggle()" id="bt">Offer Help</button>
+                  <button class="ui positive button" (click)="toggle(data)" id="bt">Offer Help</button>
                 </td>
               </tr>
             </tbody>

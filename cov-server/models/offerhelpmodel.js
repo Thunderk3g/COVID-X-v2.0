@@ -20,6 +20,11 @@ const help = mongoose.Schema(
     addInformation: {
         type: String,
         trim: true,
+    },
+    helpfor:{
+      type:String,
+      trim: true,
+      required: true,
     }
   },
   {
