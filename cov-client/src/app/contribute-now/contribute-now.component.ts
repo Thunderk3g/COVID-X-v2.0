@@ -15,15 +15,18 @@ import { Router } from '@angular/router';
 export class ContributeNowComponent implements OnInit,AfterViewInit{
   provider = new firebase.auth.GoogleAuthProvider();
   fbprovider = new firebase.auth.FacebookAuthProvider();
-  sentcode: boolean = false;
+  // sentcode: boolean = false;
   googleSignedIn: boolean = false;
-  facebookSignedIn: boolean = false;
+  // facebookSignedIn: boolean = false;
   phoneNumber:string;
   user: any;
   fbuser:any;
   otp:string;
   windowRef: any;
   li:any;
+
+  /* Contact Details */
+
   firebaseConfig = {
     apiKey: 'AIzaSyALuXsjDCnpBd3-QEdR7l5gIYmDoMegsIE',
     authDomain: 'covid-x-90730.firebaseapp.com',
@@ -67,33 +70,33 @@ export class ContributeNowComponent implements OnInit,AfterViewInit{
     });
    }
 
-   facebookSignInViaPopup(){
-    firebase
-    .auth()
-    .signInWithPopup(this.fbprovider)
-    .then((result) => {
-      /** @type {firebase.auth.OAuthCredential} */
-      var credential = result.credential;
+  //  facebookSignInViaPopup(){
+  //   firebase
+  //   .auth()
+  //   .signInWithPopup(this.fbprovider)
+  //   .then((result) => {
+  //     /** @type {firebase.auth.OAuthCredential} */
+  //     var credential = result.credential;
 
-      // The signed-in user info.
-      var fbuser = result.user;
-      this.facebookSignedIn = true;
-      console.log(fbuser);
-      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-    //   var accessToken = credential.accessToken;
-      // ...
-    })
-    .catch((error) => {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-          // ...
-    });
-   }
+  //     // The signed-in user info.
+  //     var fbuser = result.user;
+  //     this.facebookSignedIn = true;
+  //     console.log(fbuser);
+  //     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+  //   //   var accessToken = credential.accessToken;
+  //     // ...
+  //   })
+  //   .catch((error) => {
+  //     // Handle Errors here.
+  //     var errorCode = error.code;
+  //     var errorMessage = error.message;
+  //     // The email of the user's account used.
+  //     var email = error.email;
+  //     // The firebase.auth.AuthCredential type that was used.
+  //     var credential = error.credential;
+  //         // ...
+  //   });
+  //  }
    ngOnInit(){
     this.windowRef = this.windowService.windowRef;
    }
@@ -110,26 +113,27 @@ export class ContributeNowComponent implements OnInit,AfterViewInit{
       this.windowRef.recaptchaWidgetId = widgetId;
     });
   }
-  sendOTP(){
-     console.log(this.phoneNumber);
-    const appVerifier = this.windowRef.recaptchaVerifier;
+//   sendOTP(){
+//      console.log(this.phoneNumber);
+//     const appVerifier = this.windowRef.recaptchaVerifier;
 
-    firebase.auth().signInWithPhoneNumber(this.phoneNumber, appVerifier)
-      .then(confirmationResult => {
-        console.log(confirmationResult);
-        this.windowRef.confirmationResult = confirmationResult;
-        this.sentcode = true;
-      })
-      .catch(error => console.log(error));
+//     firebase.auth().signInWithPhoneNumber(this.phoneNumber, appVerifier)
+//       .then(confirmationResult => {
+//         console.log(confirmationResult);
+//         this.windowRef.confirmationResult = confirmationResult;
+//         this.sentcode = true;
+//       })
+//       .catch(error => console.log(error));
 
-  }
-  verifyOTP() {
-    this.windowRef.confirmationResult
-      .confirm(this.otp)
-      .then((userCredentials)=> console.log(userCredentials));
-  }
-  e164(phone: any) {
-    const num = phone.country + phone.area + phone.prefix + phone.line
-    return `+${num}`
-  }
+//   }
+//   verifyOTP() {
+//     this.windowRef.confirmationResult
+//       .confirm(this.otp)
+//       .then((userCredentials)=> console.log(userCredentials));
+//   }
+//   e164(phone: any) {
+//     const num = phone.country + phone.area + phone.prefix + phone.line
+//     return `+${num}`
+//   }
+// }
 }

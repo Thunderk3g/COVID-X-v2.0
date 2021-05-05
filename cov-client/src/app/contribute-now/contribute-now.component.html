@@ -6,54 +6,40 @@
   <div class="ten wide computer eleven wide tablet fourteen wide mobile column">
     <div class="ui info message" style="top: 15px;">
       <div class="header">
-        Use OTP to verify yourself before proceeding.
+        Verify yourself before proceeding.
       </div>
     </div>
 
     <div class="ui segments" style="top: 20px; margin-bottom: 20px">
       <div class="ui segment">
-        <h4 class="ui header">OTP form</h4>
+        <h4 class="ui header">Login form</h4>
       </div>
 
       <div class="ui secondary segment">
         <form id="helpForm" class="ui grid form" style="padding: 10px">
           <div class="row field">
-            <label class="six wide column" for="ph_no">Log in to your account</label>
+            <label class="six wide column" for="ph_no">Give us your contact details</label>
             <div class="eight wide column">
               <div class="ui input">
-                <input id="ph_no" name="ph_no" type="text" placeholder="Enter your 10 digit mobile number" />
+                <input id="name" name="username" type="text" placeholder="Enter your name" />
               </div>
-
+              <div class="ui input">
+                <input id="ph_no" name="ph_no" type="text" placeholder="Enter your phone number" />
+              </div>
             </div>
           </div>
-          <div class="row">
-            <label class="six wide column"></label>
-            <div class="eight wide column">
-              <button class="ui primary button" (click)="sendOTP()"> Send Verification code </button>
-            </div>
-          </div>
+          <!--Captcha Container-->
+          <div class="recaptcha-container" style="margin-top:10px" id="recaptcha-container"></div>
+          <!--End-->
           <div class="row">
             <label class="six wide column"> Or sign in with: </label>
             <div class="eight wide column">
-              <div class="ui facebook button" (click)="facebookSignInViaPopup()">
-                <i class=" facebook icon"></i>
-                Facebook
-              </div>
-              <div class="ui google plus button">
-                <i class="google plus icon" (click)="googleSignInViaPopup()"></i>
+              <div class="ui google plus button"  (click)="googleSignInViaPopup()">
+                <i class="google plus icon"></i>
                 Google Plus
               </div>
               <div class="login__field field" *ngIf="googleSignedIn">
-                <h1>You are Signed In{{li.displayName}}</h1>
-              </div>
-              <div class="login__field field" *ngIf="facebookSignedIn">
-                <h1>You are Signed In</h1>
-              </div>
-              <div class="login__field field" *ngIf="sentcode">
-                <div class="field__wrap">
-                  <input class="field__input" type="text" name="verificatiocode" placeholder="Enter Verification Code"
-                    [(ngModel)]="otp" />
-                </div>
+                <h1>You are Signed in as {{li.displayName}}</h1>
               </div>
             </div>
           </div>
