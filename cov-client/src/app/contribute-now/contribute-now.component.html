@@ -15,7 +15,7 @@
       </div>
 
       <div class="ui secondary segment">
-        <form id="helpForm" class="ui grid form" style="padding: 10px" (ngSubmit)="contributeEntry()">
+        <form id="helpForm" class="ui grid form" style="padding: 10px" (ngSubmit)="contributeEntry()" >
           <div class="row field">
             <label class="six wide column" for="firstname">Full Name</label>
             <div class="eight wide column">
@@ -71,7 +71,7 @@
           <div class="row">
             <label class="six wide column"></label>
             <div class="eight wide column">
-              <button type="submit" class="ui primary button" *ngIf="captchaBoolean" (click)="onButtonClick()" [disabled]="click" >Offer Help</button>
+              <button type="submit" class="ui primary button" *ngIf="captchaBoolean">Offer Help</button>
             </div>
           </div>
           <div class="row" *ngIf="entryContributed">

@@ -32,7 +32,6 @@ address: string;
 mobilenumber: string;
 email: string;
 interestedfield: string;
-click : boolean = false;
   firebaseConfig = {
     apiKey: 'AIzaSyALuXsjDCnpBd3-QEdR7l5gIYmDoMegsIE',
     authDomain: 'covid-x-90730.firebaseapp.com',
@@ -80,10 +79,8 @@ click : boolean = false;
     }).subscribe((data) => {
       this.data = data.body;
       console.log("DATA PASYO PASYO");
+      this.entryContributed = true;
+
     });
-}
-onButtonClick(){
-  this.click = !this.click;
-  this.entryContributed = true;
 }
 }
