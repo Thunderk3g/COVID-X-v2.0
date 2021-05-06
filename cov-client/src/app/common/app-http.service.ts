@@ -17,8 +17,18 @@ get(user: any): Observable<any> {
     observe: 'response',
   });
 }
+updateEntry(entry: any): Observable<any> {
+  return this.http.put<any>( 'http://localhost:3000/updateEntry' , entry, {
+    observe: 'response',
+  });
+}
 entries(): Observable<any> {
   return this.http.get<any>( 'http://localhost:3000/allentries' , {
+    observe: 'response',
+  });
+}
+verifiedentries(): Observable<any> {
+  return this.http.get<any>( 'http://localhost:3000/verifiedentries' , {
     observe: 'response',
   });
 }

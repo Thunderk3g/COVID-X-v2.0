@@ -24,6 +24,7 @@
     "@angular/router": "~10.1.6",
     "firebase": "^8.4.3",
     "jquery": "^3.6.0",
+    "ngx-toastr": "^13.2.1",
     "rxjs": "~6.6.0",
     "semantic-ui-css": "^2.4.1",
     "tslib": "^2.0.0",

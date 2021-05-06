@@ -22,10 +22,7 @@ export class AdminComponent implements OnInit {
       username: this.username,
       password :this.password
     }).subscribe((data) => {
-      this.name=data;
-      this.data = data.body;
-      console.log("Admin Logged In");
-      this.loginAdmin = true;
+      console.log(data.body.status);
 
     });
 }

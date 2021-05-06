@@ -30,9 +30,26 @@
           <th>Request for</th>
           <th>Urgency</th>
           <th>Address</th>
-          <th></th>
+          <th>Approve</th>
         </tr>
       </thead>
+      <tbody>
+        <tr *ngFor="let data of list">
+          <td>{{data.firstname}}
+            {{data.lastname}}</td>
+          <td>{{data.requestfor}}</td>
+          <td>
+            {{data.urgency}}</td>
+          <td>
+            {{data.address}}</td>
+          <td>
+            <div class="ui toggle checkbox">
+              <input type="checkbox" name="status" [(ngModel)]="data.isVerified" (ngModelChange)="update(data)">
+              <label>{{data.isVerified ? "verified" : "unverified"}}</label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </div>
@@ -45,7 +62,7 @@
           <th>Request for</th>
           <th>Urgency</th>
           <th>Address</th>
-          <th></th>
+          <th>Approve</th>
         </tr>
       </thead>
     </table>

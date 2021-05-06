@@ -6,7 +6,6 @@ const Help = require('../models/offerhelpmodel');
 const User = require('../models/offerhelpmodel');
 const AdminLogin = require('../models/adminloginmodel');
 
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Nepal-Helps' });
@@ -35,11 +34,17 @@ router.post('/postEntry', async function(req, res, next) {
     urgency : req.body.urgency,
     gender : req.body.gender,
     email : req.body.email,
-    mobilenumber : req.body.mobilenumber
+    mobilenumber : req.body.mobilenumber,
+    isVerified:false,
   });
   res.send(JSON.stringify(entry));
 });
-
+/*Update Entry*/
+router.put('/updateEntry', async function(req, res, next) {
+  console.log(req.body);
+  const entry = await Entry.findByIdAndUpdate(req.body._id,req.body);
+  res.send(JSON.stringify(entry));
+});
 /* Contribute Now */
 router.post('/contribute', async function(req, res, next) {
   const entry = await Contribute.create({
@@ -89,12 +94,14 @@ router.post('/offerHelp', async function(req, res, next) {
 module.exports = router;
 
 /* SHOW ENTRIES */
-router.get('/entries', async function(req, res, next) {
-  const entries = await Entry.find().sort({createdAt: -1});
-  res.render('entries', { title: 'COVID-X' , entries : entries });
-});
 router.get('/allentries', async function(req, res, next) {
   const entries = await Entry.find().sort({createdAt: -1});
+  res.send(entries);
+});
+
+/* SHOW VERIFIED ENTRIES */
+router.get('/verifiedentries', async function(req, res, next) {
+  const entries = await Entry.find({isVerified:true}).sort({createdAt: -1});
   res.send(entries);
 });
 

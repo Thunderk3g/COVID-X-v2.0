@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.httpservice.entries().subscribe((data) => {
+    this.httpservice.verifiedentries().subscribe((data) => {
       this.data = data.body;
       this.filter('bed');
     });

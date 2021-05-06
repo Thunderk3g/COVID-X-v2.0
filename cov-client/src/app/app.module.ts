@@ -16,6 +16,8 @@ import { NeedHelpComponent } from './need-help/need-help.component';
 import { AppHttpService } from './common/app-http.service';
 import { AdminComponent } from './admin/admin.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,9 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     ReactiveFormsModule,
     HttpClientModule,
     ContributeNowModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   exports: [
     HeaderComponent,

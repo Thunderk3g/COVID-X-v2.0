@@ -29,6 +29,7 @@
             ],
             "styles": [
               "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css" ,
               "node_modules/semantic-ui-css/semantic.min.css"
             ],
             "scripts": [
