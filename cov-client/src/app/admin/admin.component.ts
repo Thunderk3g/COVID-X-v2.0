@@ -1,29 +1,60 @@
 import { Component, OnInit } from '@angular/core';
-import { AppHttpService } from '../common/app-http.service';
-
+import { AuthService } from '../services/auth.service';
+import { TokenStorageService } from '../services/token-storage.service';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.scss']
+  styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent implements OnInit {
-  name:any;
-  password: any;
-  username: any;
-  loginAdmin: boolean = false;
-  data: any;
+  form: any = {};
 
-  constructor(private httpservice : AppHttpService) { }
+  isLoggedIn = false;
+
+  isLoginFailed = false;
+
+  errorMessage = '';
+
+  roles: string[] = [];
+
+  constructor(
+    private authService: AuthService,
+    private tokenStorage: TokenStorageService
+  ) {}
 
   ngOnInit(): void {
-  }
-  adminLogin(){
-    this.httpservice.adminLogin({
-      username: this.username,
-      password :this.password
-    }).subscribe((data) => {
-      console.log(data.body.status);
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
 
-    });
-}
+      this.roles = this.tokenStorage.getUser().roles;
+    }
+  }
+
+  onSubmit(): void {
+    this.authService.login(this.form).subscribe(
+      (data) => {
+        this.tokenStorage.saveToken(data.accessToken);
+
+        this.tokenStorage.saveUser(data);
+
+        this.isLoginFailed = false;
+
+        this.isLoggedIn = true;
+
+        this.roles = this.tokenStorage.getUser().roles;
+
+        this.reloadPage();
+      },
+
+      (err) => {
+        this.errorMessage = err.error.message;
+
+        this.isLoginFailed = true;
+      }
+    );
+  }
+
+  reloadPage(): void {
+    window.location.reload();
+  }
 }

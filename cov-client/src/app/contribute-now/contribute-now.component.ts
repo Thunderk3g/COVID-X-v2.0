@@ -1,13 +1,12 @@
 import { Component, OnInit ,AfterViewInit} from '@angular/core';
-import { AngularFireModule } from '@angular/fire';
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { WindowService } from '../common/window/window.service';
 import { Router } from '@angular/router';
-import { AppHttpService } from '../common/app-http.service';
-import { AuthService } from '../common/window/auth.service';
+import { TokenStorageService } from '../services/token-storage.service';
+import { AuthService } from '../services/auth.service';
 
 import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
@@ -45,8 +44,8 @@ interestedfield: string;
       public afAuth: AngularFireAuth,
       private windowService : WindowService,
       private router: Router,
-      auth:AuthService ,
-      private httpservice : AppHttpService,
+      private authService: AuthService,
+      private tokenStorage: TokenStorageService
   ) {
     this.interestedfield="";
     firebase.initializeApp(this.firebaseConfig);
@@ -70,7 +69,7 @@ interestedfield: string;
     });
   }
   contributeEntry(){
-    this.httpservice.contribute({
+    this.authService.contribute({
       fullname: this.fullname,
       mobilenumber :this.mobilenumber,
       address: this.address,

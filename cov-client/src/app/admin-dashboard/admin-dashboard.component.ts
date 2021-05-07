@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AppHttpService } from '../common/app-http.service';
+import { AuthService } from '../services/auth.service';
+import { TokenStorageService } from '../services/token-storage.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -12,13 +13,15 @@ export class AdminDashboardComponent implements OnInit {
   li:any;
   list: any[];
   constructor(
-    private httpservice: AppHttpService,
+    private authService: AuthService,
+    private tokenStorage: TokenStorageService
   ) {
     this.li = {};
    }
 
   ngOnInit(): void {
-    this.httpservice.entries().subscribe((data) => {
+    this.authService.entries().subscribe((data) => {
+      this.tokenStorage.saveToken(data.accessToken);
       this.list = [];
       this.list = data.body;
       console.log(this.list);
@@ -26,7 +29,8 @@ export class AdminDashboardComponent implements OnInit {
   }
   update(data:any){
   //    data.isVerified=!data.isVerified;
-      this.httpservice.updateEntry(data).subscribe((data) => {
+      this.authService.updateEntry(data).subscribe((data) => {
+        this.tokenStorage.saveToken(data.accessToken);
         this.ngOnInit();
       });
   }

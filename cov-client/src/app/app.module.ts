@@ -7,17 +7,17 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ContributeNowComponent } from './contribute-now/contribute-now.component';
 import { HomeComponent } from './home/home.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContributeNowModule } from './contribute-now/contribute-now.module';
 import { WindowService } from './common/window/window.service';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NeedHelpComponent } from './need-help/need-help.component';
-import { AppHttpService } from './common/app-http.service';
 import { AdminComponent } from './admin/admin.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { authInterceptorProviders } from './helpers/auth.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +25,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     HomeComponent,
     ContributeNowComponent,
-    DashboardComponent,
     LandingPageComponent,
     NeedHelpComponent,
     AdminComponent,
@@ -47,7 +46,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     FooterComponent
   ],
-  providers: [WindowService, AppHttpService],
+  providers: [WindowService, authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

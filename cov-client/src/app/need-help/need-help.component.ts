@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AppHttpService } from '../common/app-http.service';
-import { AuthService } from '../common/window/auth.service';
-
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { TokenStorageService } from '../services/token-storage.service';
+import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-need-help',
   templateUrl: './need-help.component.html',
@@ -12,7 +11,6 @@ export class NeedHelpComponent implements OnInit {
   entryForm: FormGroup;
   data: any;
   user:any;
-  auth: AuthService;
   firstname: string;
   lastname :string;
   gender:string;
@@ -21,8 +19,9 @@ export class NeedHelpComponent implements OnInit {
   email: string;
   requestfor: string;
   mobilenumber: string;
-  constructor( auth:AuthService ,
-          private httpservice : AppHttpService,
+  constructor(
+          private authService: AuthService,
+          private tokenStorage: TokenStorageService
     ) {
       this.gender="";
       this.requestfor="";
@@ -30,14 +29,15 @@ export class NeedHelpComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    this.httpservice.entries().subscribe((data) => {
+    this.authService.entries().subscribe((data) => {
+      this.tokenStorage.saveToken(data.accessToken);
       this.data = data.body;
       console.log(data);
     });
 
   }
   sendEntry(){
-    this.httpservice.get({
+    this.authService.get({
       firstname: this.firstname,
       lastname :this.lastname,
       address: this.address,
@@ -47,6 +47,7 @@ export class NeedHelpComponent implements OnInit {
       requestfor: this.requestfor,
       mobilenumber: this.mobilenumber
     }).subscribe((data) => {
+      this.tokenStorage.saveToken(data.accessToken);
       this.data = data.body;
       console.log(data);
     });

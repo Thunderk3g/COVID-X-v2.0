@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AppHttpService } from '../common/app-http.service';
+import { AuthService } from '../services/auth.service';
+import { TokenStorageService } from '../services/token-storage.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -23,7 +24,8 @@ export class HomeComponent implements OnInit {
   public show: boolean = false;
   public buttonName: any = 'Show';
   constructor(private http: HttpClient,
-    private httpservice: AppHttpService,
+    private authService: AuthService,
+    private tokenStorage: TokenStorageService
   ) {
     this.li = {};
     this.dist = new Object();
@@ -31,7 +33,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.httpservice.verifiedentries().subscribe((data) => {
+
+    this.authService.verifiedentries().subscribe((data) => {
+      this.tokenStorage.saveToken(data.accessToken);
       this.data = data.body;
       this.filter('bed');
     });
@@ -88,7 +92,7 @@ export class HomeComponent implements OnInit {
     this.buttonName = "Hide";
   }
   offerHelp(){
-    this.httpservice.offer({
+    this.authService.offer({
       fullname: this.fullname,
       address: this.address,
       contact: this.contact,
