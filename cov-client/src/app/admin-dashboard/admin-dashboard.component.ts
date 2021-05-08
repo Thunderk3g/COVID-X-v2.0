@@ -12,16 +12,20 @@ export class AdminDashboardComponent implements OnInit {
   data: any;
   li:any;
   list: any[];
+  currentUser: any;
+  tokenStorageService: any;
   constructor(
     private authService: AuthService,
-    private tokenStorage: TokenStorageService
+    private tokenStorage: TokenStorageService,
+    private token: TokenStorageService
+
   ) {
     this.li = {};
    }
 
   ngOnInit(): void {
+    this.currentUser = this.token.getUser();
     this.authService.entries().subscribe((data) => {
-      this.tokenStorage.saveToken(data.accessToken);
       this.list = [];
       this.list = data.body;
       console.log(this.list);
@@ -33,5 +37,9 @@ export class AdminDashboardComponent implements OnInit {
         this.tokenStorage.saveToken(data.accessToken);
         this.ngOnInit();
       });
+  }
+  logout(): void {
+    window.sessionStorage.clear();
+    window.location.reload();
   }
 }

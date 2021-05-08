@@ -10,6 +10,12 @@ import { Router, NavigationEnd } from '@angular/router';
 
 export class AppComponent implements OnInit {
   title = 'cov-client';
+  tokenStorageService: any;
+  private roles: string[];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username: string;
   constructor(
     private router: Router,
   ) {
@@ -32,4 +38,5 @@ export class AppComponent implements OnInit {
       }
     });
   }
+
 }
