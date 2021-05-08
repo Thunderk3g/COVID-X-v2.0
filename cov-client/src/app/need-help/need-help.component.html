@@ -15,7 +15,7 @@
       </div>
 
       <div class="ui secondary segment">
-        <form id="helpForm" class="ui grid form" style="padding: 10px" (ngSubmit)="sendEntry()">
+        <form id="helpForm" class="ui grid form needhelp" style="padding: 10px" (ngSubmit)="sendEntry()">
           <div class="row field">
             <label class="six wide column" for="firstname">First name</label>
             <div class="eight wide column">
@@ -46,7 +46,7 @@
             <label class="six wide column" for="typeOfReq">Urgency</label>
             <div class="eight wide column">
 
-              <select class="ui dropdown" name="urgency" [(ngModel)]="asdf">
+              <select class="ui dropdown" id="urgency" name="urgency" [(ngModel)]="urgency">
                 <option value="" selected disabled>-- Select --</option>
                 <option value="Immediate">Immediate</option>
                 <option value="Medium">Medium</option>
@@ -101,9 +101,13 @@
           <div class="row">
             <label class="six wide column"></label>
             <div class="eight wide column">
-              <button type="submit" class="ui primary button">Post Request</button>
+              <button type="submit" class="ui primary submit button">Post Request</button>
             </div>
           </div>
+          <div class="eight wide column">
+            <div class="ui error message"></div>
+          </div>
+
         </form>
       </div>
     </div>

@@ -114,7 +114,7 @@
       </div>
       <div class="twelve wide stretched column">
         <div class="ui active tab segment" data-tab="first/a">
-          <table class="ui striped table">
+          <table class="ui striped structured table">
             <thead>
               <tr>
                 <th>Name</th>
@@ -131,9 +131,9 @@
                 <td>{{data.requestfor}}</td>
                 <td>
                   {{data.urgency}}</td>
-                <td>
+                <td class="collapsing">
                   {{data.address}}</td>
-                <td>
+                <td class="right aligned collapsing">
                   <button class="ui positive button" (click)="toggle(data)" id="bt">Offer Help</button>
                 </td>
               </tr>
@@ -141,7 +141,7 @@
           </table>
         </div>
         <div class="ui tab segment" data-tab="first/b">
-          <table class="ui striped table">
+          <table class="ui stripe structured table">
             <thead>
               <tr>
                 <th>Name</th>
@@ -158,9 +158,9 @@
                 <td>{{data.requestfor}}</td>
                 <td>
                   {{data.urgency}}</td>
-                <td>
+                <td class="collapsing">
                   {{data.address}}</td>
-                <td>
+                <td class="right aligned collapsing">
                   <button class="ui positive button" (click)="toggle(data)" id="bt">Offer Help</button>
                 </td>
               </tr>
@@ -168,34 +168,7 @@
           </table>
         </div>
         <div class="ui tab segment" data-tab="first/c">
-          <table class="ui striped table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Request for</th>
-                <th>Urgency</th>
-                <th>Address</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let data of list" >
-                <td>{{data.firstname}}
-                  {{data.lastname}}</td>
-                <td>{{data.requestfor}}</td>
-                <td>
-                  {{data.urgency}}</td>
-                <td>
-                  {{data.address}}</td>
-                <td>
-                  <button class="ui positive button" (click)="toggle(data)" id="bt">Offer Help</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="ui tab segment" data-tab="first/d">
-          <table class="ui striped table">
+          <table class="ui striped structured table">
             <thead>
               <tr>
                 <th>Name</th>
@@ -212,9 +185,36 @@
                 <td>{{data.requestfor}}</td>
                 <td>
                   {{data.urgency}}</td>
-                <td>
+                <td class="collapsing">
                   {{data.address}}</td>
+                <td class="right aligned collapsing">
+                  <button class="ui positive button" (click)="toggle(data)" id="bt">Offer Help</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ui tab segment" data-tab="first/d">
+          <table class="ui striped structured table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Request for</th>
+                <th>Urgency</th>
+                <th>Address</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of list">
+                <td>{{data.firstname}}
+                  {{data.lastname}}</td>
+                <td>{{data.requestfor}}</td>
                 <td>
+                  {{data.urgency}}</td>
+                <td class="collapsing">
+                  {{data.address}}</td>
+                <td class="right aligned collapsing">
                   <button class="ui positive button" (click)="toggle(data)" id="bt">Offer
                     Help</button>
                 </td>

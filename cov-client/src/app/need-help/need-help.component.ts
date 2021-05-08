@@ -10,23 +10,23 @@ import { AuthService } from '../services/auth.service';
 export class NeedHelpComponent implements OnInit {
   entryForm: FormGroup;
   data: any;
-  user:any;
+  user: any;
   firstname: string;
-  lastname :string;
-  gender:string;
+  lastname: string;
+  gender: string;
   address: string;
-  asdf: string;
+  urgency: string;
   email: string;
   requestfor: string;
   mobilenumber: string;
   constructor(
-          private authService: AuthService,
-          private tokenStorage: TokenStorageService
-    ) {
-      this.gender="";
-      this.requestfor="";
-      this.asdf="";
-    }
+    private authService: AuthService,
+    private tokenStorage: TokenStorageService
+  ) {
+    this.gender = "";
+    this.requestfor = "";
+    this.urgency = "";
+  }
 
   ngOnInit(): void {
     this.authService.entries().subscribe((data) => {
@@ -36,13 +36,13 @@ export class NeedHelpComponent implements OnInit {
     });
 
   }
-  sendEntry(){
+  sendEntry() {
     this.authService.get({
       firstname: this.firstname,
-      lastname :this.lastname,
+      lastname: this.lastname,
       address: this.address,
-      urgency: this.asdf,
-      gender:this.gender,
+      urgency: this.urgency,
+      gender: this.gender,
       email: this.email,
       requestfor: this.requestfor,
       mobilenumber: this.mobilenumber
@@ -51,5 +51,5 @@ export class NeedHelpComponent implements OnInit {
       this.data = data.body;
       console.log(data);
     });
-}
+  }
 }

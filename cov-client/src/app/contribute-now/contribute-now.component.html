@@ -15,12 +15,12 @@
       </div>
 
       <div class="ui secondary segment">
-        <form id="helpForm" class="ui grid form" style="padding: 10px" (ngSubmit)="contributeEntry()">
+        <form id="helpForm" class="ui grid form contribute" style="padding: 10px" (ngSubmit)="contributeEntry()">
           <div class="row field">
-            <label class="six wide column" for="firstname">Full Name</label>
+            <label class="six wide column" for="fullname">Full Name</label>
             <div class="eight wide column">
               <div class="ui input">
-                <input id="firstname" name="firstname" type="text" [(ngModel)]="fullname" placeholder="Full Name" />
+                <input id="fullname" name="fullname" type="text" [(ngModel)]="fullname" placeholder="Full Name" />
               </div>
             </div>
           </div>
@@ -79,8 +79,12 @@
           <div class="row" *ngIf="entryContributed">
             <div class="ui center aligned container">
               Thank you for providing your information. We will contact you very soon ! <br>
-              <button type="submit" class="ui primary button" routerLink="/home-component">Go to Home page</button>
+              <button type="submit" class="ui primary submit button" routerLink="/home-component">Go to Home
+                page</button>
             </div>
+          </div>
+          <div class="eight wide column">
+            <div class="ui error message"></div>
           </div>
         </form>
       </div>

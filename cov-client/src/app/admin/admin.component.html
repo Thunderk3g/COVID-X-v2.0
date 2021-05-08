@@ -14,7 +14,7 @@
       </div>
 
       <div class="ui secondary segment">
-        <form id="helpForm" class="ui grid form" style="padding: 10px" *ngIf="!isLoggedIn" name="form"
+        <form id="adminForm" class="ui grid form admin" style="padding: 10px" *ngIf="!isLoggedIn" name="form"
           (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
           <div class="row field">
             <label class="six wide column" for="username">Username</label>
@@ -45,19 +45,18 @@
             </div>
           </div>
 
-                    <div class="row">
-                        <label class="six wide column"></label>
-                        <div class="eight wide column">
-                            <button type="submit" class="ui primary button">Login</button>
-                        </div>
-                        <div class="eight wide column" *ngIf="isLoggedIn">
-                          <label class="six wide column">You've Logged in Succesfully. Go to</label>
-                          <button type="submit" class="ui primary button">Dashboard</button>
-                      </div>
-                    </div>
-                </form>
+          <div class="row">
+            <label class="six wide column"></label>
+            <div class="eight wide column">
+              <button type="submit" class="ui primary button">Login</button>
+            </div>
+            <div class="eight wide column" *ngIf="isLoggedIn">
+              <label class="six wide column">You've Logged in Succesfully. Go to</label>
+              <button type="submit" class="ui primary button">Dashboard</button>
             </div>
           </div>
+        </form>
       </div>
     </div>
-
+  </div>
+</div>
