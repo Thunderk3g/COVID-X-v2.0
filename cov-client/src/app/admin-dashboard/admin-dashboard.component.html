@@ -1,10 +1,13 @@
 <app-header></app-header>
+<div class="container-fluid p-0 m-0" *ngIf="currentUser; else loggedOut">
 <div class="pusher">
   <div class="main-content">
     <div class="ui center aligned container segment">
       <div class="header">
-        <h1> Welcome Username Here</h1>
-
+        <h1> Welcome {{ currentUser.username }}</h1>
+        <button class="ui secondary button" (click)="logout()">
+          LOGOUT
+        </button>
       </div>
     </div>
     <div class="ui padded three item inverted gray menu">
@@ -83,3 +86,7 @@
     </table>
   </div>
 </div>
+</div>
+<ng-template #loggedOut>
+  Please login.
+</ng-template>
