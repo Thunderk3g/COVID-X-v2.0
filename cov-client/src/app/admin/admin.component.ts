@@ -42,8 +42,6 @@ export class AdminComponent implements OnInit {
         this.isLoggedIn = true;
 
         this.roles = this.tokenStorage.getUser().roles;
-
-        this.reloadPage();
       },
 
       (err) => {
@@ -54,7 +52,4 @@ export class AdminComponent implements OnInit {
     );
   }
 
-  reloadPage(): void {
-    window.location.reload();
-  }
 }
