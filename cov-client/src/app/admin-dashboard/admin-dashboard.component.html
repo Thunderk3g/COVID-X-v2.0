@@ -1,95 +1,102 @@
 <app-header></app-header>
 <div class="container-fluid p-0 m-0" *ngIf="currentUser; else loggedOut">
-<div class="pusher">
-  <div class="main-content">
-    <div class="ui center aligned container segment">
-      <div class="header">
-        <h1> Welcome {{ currentUser.username }}</h1>
-        <button class="ui secondary button" (click)="logout()">
-          LOGOUT
-        </button>
+  <div class="pusher">
+    <div class="main-content">
+      <div class="ui center aligned container segment">
+        <div class="header">
+          <h1> Welcome {{ currentUser.username }}</h1>
+          <button class="ui secondary button" (click)="logout()">
+            LOGOUT
+          </button>
+        </div>
+      </div>
+      <div class="ui padded three item inverted gray menu">
+        <a class="active item" data-tab="first">
+          Help Request List
+        </a>
+        <a class="item" data-tab="second">
+          Contribute Request List
+        </a>
+        <a class="item" data-tab="third">
+          Offer Help Request
+        </a>
       </div>
     </div>
-    <div class="ui padded three item inverted gray menu">
-      <a class="active item" data-tab="first">
-        Help Request List
-      </a>
-      <a class="item" data-tab="second">
-        Contribute Request List
-      </a>
-      <a class="item" data-tab="third">
-        Offer Help Request
-      </a>
+  </div>
+
+  <div class="ui bottom attached active tab segment" data-tab="first">
+    <div class="twelve wide stretched column">
+      <table class="ui striped table">
+        <thead>
+          <tr>
+            <th>Help Request</th>
+            <th>Request for</th>
+            <th>Urgency</th>
+            <th>Address</th>
+            <th>Approve</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of list">
+            <td>{{data.firstname}}
+              {{data.lastname}}</td>
+            <td>{{data.requestfor}}</td>
+            <td>
+              {{data.urgency}}</td>
+            <td>
+              {{data.address}}</td>
+            <td>
+              <div class="ui toggle checkbox">
+                <input type="checkbox" name="status" [(ngModel)]="data.isVerified" (ngModelChange)="update(data)">
+                <label>{{data.isVerified ? "verified" : "unverified"}}</label>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="second">
+    <div class="twelve wide stretched column">
+      <table class="ui striped table">
+        <thead>
+          <tr>
+            <th>Contribute Request</th>
+            <th>Request for</th>
+            <th>Urgency</th>
+            <th>Address</th>
+            <th>Approve</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="third">
+    <div class="twelve wide stretched column">
+      <table class="ui striped table">
+        <thead>
+          <tr>
+            <th>Offer Help request</th>
+            <th>Request for</th>
+            <th>Urgency</th>
+            <th>Address</th>
+            <th></th>
+          </tr>
+        </thead>
+      </table>
     </div>
   </div>
 </div>
-
-<div class="ui bottom attached active tab segment" data-tab="first">
-  <div class="twelve wide stretched column">
-    <table class="ui striped table">
-      <thead>
-        <tr>
-          <th>Help Request</th>
-          <th>Request for</th>
-          <th>Urgency</th>
-          <th>Address</th>
-          <th>Approve</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let data of list">
-          <td>{{data.firstname}}
-            {{data.lastname}}</td>
-          <td>{{data.requestfor}}</td>
-          <td>
-            {{data.urgency}}</td>
-          <td>
-            {{data.address}}</td>
-          <td>
-            <div class="ui toggle checkbox">
-              <input type="checkbox" name="status" [(ngModel)]="data.isVerified" (ngModelChange)="update(data)">
-              <label>{{data.isVerified ? "verified" : "unverified"}}</label>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-<div class="ui bottom attached tab segment" data-tab="second">
-  <div class="twelve wide stretched column">
-    <table class="ui striped table">
-      <thead>
-        <tr>
-          <th>Contribute Request</th>
-          <th>Request for</th>
-          <th>Urgency</th>
-          <th>Address</th>
-          <th>Approve</th>
-        </tr>
-      </thead>
-    </table>
-  </div>
-</div>
-<div class="ui bottom attached tab segment" data-tab="third">
-  <div class="twelve wide stretched column">
-    <table class="ui striped table">
-      <thead>
-        <tr>
-          <th>Offer Help request</th>
-          <th>Request for</th>
-          <th>Urgency</th>
-          <th>Address</th>
-          <th></th>
-        </tr>
-      </thead>
-    </table>
-  </div>
-</div>
-</div>
 <ng-template #loggedOut>
+<<<<<<< HEAD
   Please login to use Admin Dashboard
   <button class="ui secondary button" routerLink="/admin-component">
     Okay
   </button>
+=======
+  <div class="ui error message">
+    <div class="header">Not Logged In</div>
+    <p>Please <a routerLink="/admin-component">Log in</a> before accessing the dashboard.</p>
+  </div>
+>>>>>>> 2d70122ac4d6b999a5ae40c89d597f6dfec8da0e
 </ng-template>

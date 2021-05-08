@@ -1,46 +1,49 @@
 <div class="ui grid sem">
-    <div class="four wide computer two wide tablet one wide mobile column"></div>
+  <div class="four wide computer two wide tablet one wide mobile column"></div>
 
-    <div class="eight wide computer eleven wide tablet fourteen wide mobile column">
-        <div class="ui info message" style="top: 15px;">
-            <div class="header">
-                Admin Login
+  <div class="eight wide computer eleven wide tablet fourteen wide mobile column">
+    <div class="ui info message" style="top: 15px;">
+      <div class="header">
+        Admin Login
+      </div>
+    </div>
+
+    <div class="ui inverted gray segments" style="top: 20px; margin-bottom: 20px">
+      <div class="ui segment">
+        <h4 class="ui header">Information Form</h4>
+      </div>
+
+      <div class="ui secondary segment">
+        <form id="helpForm" class="ui grid form" style="padding: 10px" *ngIf="!isLoggedIn" name="form"
+          (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+          <div class="row field">
+            <label class="six wide column" for="username">Username</label>
+            <div class="eight wide column">
+              <div class="ui input">
+                <input id="username" name="username" type="text" placeholder="Username" class="form-control"
+                  name="username" [(ngModel)]="form.username" required #username="ngModel">
+              </div>
+              <div class="alert alert-danger" role="alert" *ngIf="f.submitted && username.invalid">
+                Username is required!
+              </div>
             </div>
-        </div>
+          </div>
 
-        <div class="ui inverted gray segments" style="top: 20px; margin-bottom: 20px">
-            <div class="ui segment">
-                <h4 class="ui header">Information Form</h4>
+          <div class="row field">
+            <label class="six wide column" for="password">Password</label>
+            <div class="eight wide column">
+              <div class="ui input">
+                <input id="password" name="password" type="password" placeholder="Password" class="form-control"
+                  name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel">
+              </div>
+              <div class="alert alert-danger" role="alert" *ngIf="f.submitted && password.invalid">
+                <div *ngIf="password.errors.required">Password is required</div>
+                <div *ngIf="password.errors.minlength">
+                  Password must be at least 6 characters
+                </div>
+              </div>
             </div>
-
-            <div class="ui secondary segment">
-                <form id="helpForm" class="ui grid form" style="padding: 10px" *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-                    <div class="row field">
-                        <label class="six wide column" for="username">username</label>
-                        <div class="eight wide column">
-                            <div class="ui input">
-                                <input id="username" name="username" type="text" placeholder="Username" class="form-control" name="username" [(ngModel)]="form.username" required #username="ngModel">
-                            </div>
-                            <div class="alert alert-danger" role="alert" *ngIf="f.submitted && username.invalid">
-                                Username is required!
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row field">
-                        <label class="six wide column" for="password">Password</label>
-                        <div class="eight wide column">
-                            <div class="ui input">
-                                <input id="password" name="password" type="password" placeholder="Password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel">
-                            </div>
-                            <div class="alert alert-danger" role="alert" *ngIf="f.submitted && password.invalid">
-                                <div *ngIf="password.errors.required">Password is required</div>
-                                <div *ngIf="password.errors.minlength">
-                                    Password must be at least 6 characters
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+          </div>
 
                     <div class="row">
                         <label class="six wide column"></label>
@@ -54,6 +57,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+          </div>
+      </div>
     </div>
-</div>
+
