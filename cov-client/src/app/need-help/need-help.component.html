@@ -70,7 +70,7 @@
             <label class="six wide column" for="email">Email</label>
             <div class="eight wide column">
               <div class="ui input">
-                <input id="email" name="email" type="text" placeholder="Email" [(ngModel)]="email" />
+                <input id="email" name="email" type="text" placeholder="Email" [(ngModel)]="email" required>
               </div>
             </div>
           </div>
@@ -97,15 +97,24 @@
               </div>
             </div>
           </div>
-
+          <div class="eight wide column">
+            <div class="recaptcha-container" style="margin-top:10px" id="recaptcha-container"></div>
+          </div>
           <div class="row">
             <label class="six wide column"></label>
             <div class="eight wide column">
               <button type="submit" class="ui primary button">Post Request</button>
             </div>
           </div>
+          <div class="row" *ngIf = "needContributed">
+            <label class="six wide column">THANK YOU FOR THE SUBMISSION</label>
+            <div class="eight wide column">
+              <button type="submit" class="ui primary button">HOME PAGE</button>
+            </div>
+          </div>
         </form>
       </div>
     </div>
   </div>
+
 </div>

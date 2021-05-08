@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
+import { ContributeNowComponent } from './contribute-now.component';
 
 
 @NgModule({

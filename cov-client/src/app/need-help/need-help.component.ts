@@ -19,6 +19,7 @@ export class NeedHelpComponent implements OnInit {
   email: string;
   requestfor: string;
   mobilenumber: string;
+  needContributed: boolean = false;
   constructor(
           private authService: AuthService,
           private tokenStorage: TokenStorageService
@@ -47,9 +48,11 @@ export class NeedHelpComponent implements OnInit {
       requestfor: this.requestfor,
       mobilenumber: this.mobilenumber
     }).subscribe((data) => {
+      this.needContributed = true;
       this.tokenStorage.saveToken(data.accessToken);
       this.data = data.body;
       console.log(data);
     });
+
 }
 }
