@@ -24,7 +24,7 @@
                 <label class="six wide column" for="fullname">Full name</label>
                 <div class="eight wide column">
                   <div class="ui input">
-                    <input id="fullname" name="fullname" type="text" placeholder="full name"  [(ngModel)]="fullname"/>
+                    <input id="fullname" name="fullname" type="text" placeholder="full name" [(ngModel)]="fullname" />
                   </div>
                 </div>
               </div>
@@ -39,10 +39,10 @@
               </div>
 
               <div class="row field">
-                <label class="six wide column" for="contact" >Contact No.</label>
+                <label class="six wide column" for="contact">Contact No.</label>
                 <div class="eight wide column">
                   <div class="ui input">
-                    <input id="contact" name="contact" type="text" placeholder="Contact Number" [(ngModel)]="contact" >
+                    <input id="contact" name="contact" type="text" placeholder="Contact Number" [(ngModel)]="contact">
                   </div>
                 </div>
               </div>
@@ -50,7 +50,8 @@
                 <label class="six wide column" for="address">Additional Information</label>
                 <div class="eight wide column">
                   <div class="ui input">
-                    <input id="addinformation" name="addinformation" type="text" placeholder="addinformation" [(ngModel)]="addinformation">
+                    <input id="addinformation" name="addinformation" type="text" placeholder="addinformation"
+                      [(ngModel)]="addinformation">
                   </div>
                 </div>
               </div>
@@ -214,7 +215,8 @@
                 <td>
                   {{data.address}}</td>
                 <td>
-                  <button class="ui positive button" (click)="toggle(data)" id="bt">Offer Help</button>
+                  <button class="ui positive button" (click)="toggle(data)" id="bt">Offer
+                    Help</button>
                 </td>
               </tr>
             </tbody>
@@ -337,14 +339,16 @@
         <i class="info icon"></i>
         <div class="content">
           Current Covid status in {{dist?.title}}&nbsp;|&nbsp;{{dist?.title_ne}}
-          <div class="sub header">
-            <label>Select District </label>
+          <h2 style="font-size: 0.8em;">
             <select class="ui search dropdown" name="district" [(ngModel)]="district"
               (ngModelChange)="loadDatabyDistrict()">
               <option value="">District</option>
               <option [value]="data.id" *ngFor="let data of dist">{{data.title}}</option>
-            </select>
-          </div>
+            </select></h2>
+          <!-- <div class="sub header">
+            <label>Select District </label>
+
+          </div> -->
         </div>
       </div>
       <div class="ui grid stackable padded">
