@@ -22,6 +22,9 @@
               <div class="ui input">
                 <input id="firstname" name="firstname" type="text" [(ngModel)]="firstname" placeholder="First name" />
               </div>
+              <h5 id="fnamecheck" style="color: red;">
+                **First name cannot be empty.
+              </h5>
             </div>
           </div>
 
@@ -31,6 +34,9 @@
               <div class="ui input">
                 <input id="lastname" name="lastname" type="text" placeholder="Last name" [(ngModel)]="lastname" />
               </div>
+              <h5 id="lnamecheck" style="color: red;">
+                **Last name cannot be empty.
+              </h5>
             </div>
           </div>
 
@@ -38,8 +44,11 @@
             <label class="six wide column" for="address">Address</label>
             <div class="eight wide column">
               <div class="ui input">
-                <input id="address" name="address" type="text" placeholder="address" [(ngModel)]="address" />
+                <input id="address" name="address" type="text" placeholder="Address" [(ngModel)]="address" />
               </div>
+              <h5 id="addresscheck" style="color: red;">
+                **Address is missing.
+              </h5>
             </div>
           </div>
           <div class="row field">
@@ -72,6 +81,10 @@
               <div class="ui input">
                 <input id="email" name="email" type="text" placeholder="Email" [(ngModel)]="email" required>
               </div>
+              <small id="emailvalid" class="form-text
+              text-muted invalid-feedback">
+                Your email must be a valid email
+              </small>
             </div>
           </div>
 
@@ -89,17 +102,23 @@
           </div>
 
           <div class="row field">
-            <label class="six wide column" for="ph_no">Mobile Number</label>
+            <label class="six wide column" for="contact">Mobile Number</label>
             <div class="eight wide column">
               <div class="ui input">
-                <input id="ph_no" name="ph_no" type="text" placeholder="Your Mobile number"
+                <input id="contact" name="contact" type="text" placeholder="Your Mobile number"
                   [(ngModel)]="mobilenumber" />
               </div>
+              <h5 id="contactcheck" style="color: red;">
+                **Mobile number is required.
+              </h5>
             </div>
           </div>
-          <div class="eight wide column">
-            <div class="recaptcha-container" style="margin-top:10px" id="recaptcha-container"></div>
+          <div class="row field">
+            <div class="ui error message"></div>
           </div>
+          <!-- <div class="eight wide column">
+            <div class="recaptcha-container" style="margin-top:10px" id="recaptcha-container"></div>
+          </div> -->
           <div class="row">
             <label class="six wide column"></label>
             <div class="eight wide column">
