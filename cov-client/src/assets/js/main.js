@@ -127,10 +127,10 @@ $(function () {
   $('#volunteererr').hide();
   let volunteerError = true;
   $('#volunteerFor').keyup(function () {
-    validatevolunteer();
+    validateVolunteer();
   });
 
-  function validatevolunteer() {
+  function validateVolunteer() {
     let volValue = $('#volunteerFor').val();
     if (volValue.length == '') {
       $('#volunteererr').show();
@@ -141,22 +141,29 @@ $(function () {
     }
   }
 
+
+
   // Validate Email
-  const email = $('#email').val();
-  email.addEventListener('blur', () => {
+  $('#emailcheck').hide();
+  let emailError = true;
+  $('#email').keyup(function () {
+    validateEmail();
+  });
+
+  function validateEmail() {
+    const email = $('#email').val();
     let regex =
       /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
-    let s = email.value;
-    if (regex.test(s)) {
-      email.classList.remove(
-        'is-invalid');
+    if (regex.test(email) == false) {
+      $('#emailcheck').show();
       emailError = true;
+      return false;
+
     } else {
-      email.classList.add(
-        'is-invalid');
+      $('#emailcheck').hide();
       emailError = false;
     }
-  })
+  }
 });
 
 
