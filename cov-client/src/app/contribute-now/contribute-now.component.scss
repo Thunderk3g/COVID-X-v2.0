@@ -3,9 +3,9 @@ h5 {
   font-size: 1.5vmin;
 }
 
-
-.is-invalid {
-  background-color: rgb(255, 188, 176);
-  border-color: red;
-
+@media only screen and (max-width: 600px) {
+  h5 {
+    margin: 0;
+    font-size: 2vmin;
+  }
 }
